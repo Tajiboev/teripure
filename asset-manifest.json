@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/teripure/static/css/main.67904452.css",
-    "main.js": "/teripure/static/js/main.e2fa5788.js",
-    "static/media/main.jpg": "/teripure/static/media/main.4b43741807fccf4807e9.jpg",
-    "static/media/image2.png": "/teripure/static/media/image2.be2882f38f441045f097.png",
-    "static/media/image3.png": "/teripure/static/media/image3.09443e4f86fbd1b1d69e.png",
-    "static/media/image1.png": "/teripure/static/media/image1.3e5577011bfdbceb3231.png",
-    "static/media/image4.png": "/teripure/static/media/image4.b04e5f71e6cbd87a8a6f.png",
-    "static/media/HelveticaLight.eot": "/teripure/static/media/HelveticaLight.498b340ad7b977a94b4b.eot",
-    "static/media/HelveticaLight.ttf": "/teripure/static/media/HelveticaLight.9c4794b091302442b6a0.ttf",
-    "static/media/HelveticaRegular.eot": "/teripure/static/media/HelveticaRegular.66a1dc2793711aed94ac.eot",
-    "static/media/HelveticaRegular.ttf": "/teripure/static/media/HelveticaRegular.31a272d75aa97b0dcb55.ttf",
-    "static/media/HelveticaBold.eot": "/teripure/static/media/HelveticaBold.e7ab24fa6e70c3391cc9.eot",
-    "static/media/HelveticaBold.ttf": "/teripure/static/media/HelveticaBold.d2d4622394c0e88a8c69.ttf",
-    "static/media/HelveticaLight.woff": "/teripure/static/media/HelveticaLight.8b0d01542b9ea4d822c8.woff",
-    "static/media/HelveticaBold.woff": "/teripure/static/media/HelveticaBold.e941872262a60140e525.woff",
-    "static/media/HelveticaRegular.woff": "/teripure/static/media/HelveticaRegular.604bdf88d745293ed39d.woff",
-    "index.html": "/teripure/index.html",
-    "main.67904452.css.map": "/teripure/static/css/main.67904452.css.map",
-    "main.e2fa5788.js.map": "/teripure/static/js/main.e2fa5788.js.map"
+    "main.css": "/static/css/main.1783e605.css",
+    "main.js": "/static/js/main.0f195cc1.js",
+    "static/media/main.jpg": "/static/media/main.4b43741807fccf4807e9.jpg",
+    "static/media/image2.png": "/static/media/image2.be2882f38f441045f097.png",
+    "static/media/image3.png": "/static/media/image3.09443e4f86fbd1b1d69e.png",
+    "static/media/image1.png": "/static/media/image1.3e5577011bfdbceb3231.png",
+    "static/media/image4.png": "/static/media/image4.b04e5f71e6cbd87a8a6f.png",
+    "static/media/HelveticaLight.eot": "/static/media/HelveticaLight.498b340ad7b977a94b4b.eot",
+    "static/media/HelveticaLight.ttf": "/static/media/HelveticaLight.9c4794b091302442b6a0.ttf",
+    "static/media/HelveticaRegular.eot": "/static/media/HelveticaRegular.66a1dc2793711aed94ac.eot",
+    "static/media/HelveticaRegular.ttf": "/static/media/HelveticaRegular.31a272d75aa97b0dcb55.ttf",
+    "static/media/HelveticaBold.eot": "/static/media/HelveticaBold.e7ab24fa6e70c3391cc9.eot",
+    "static/media/HelveticaBold.ttf": "/static/media/HelveticaBold.d2d4622394c0e88a8c69.ttf",
+    "static/media/HelveticaLight.woff": "/static/media/HelveticaLight.8b0d01542b9ea4d822c8.woff",
+    "static/media/HelveticaBold.woff": "/static/media/HelveticaBold.e941872262a60140e525.woff",
+    "static/media/HelveticaRegular.woff": "/static/media/HelveticaRegular.604bdf88d745293ed39d.woff",
+    "index.html": "/index.html",
+    "main.1783e605.css.map": "/static/css/main.1783e605.css.map",
+    "main.0f195cc1.js.map": "/static/js/main.0f195cc1.js.map"
   },
   "entrypoints": [
-    "static/css/main.67904452.css",
-    "static/js/main.e2fa5788.js"
+    "static/css/main.1783e605.css",
+    "static/js/main.0f195cc1.js"
   ]
 }
