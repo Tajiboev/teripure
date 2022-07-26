@@ -1,0 +1,42 @@
+@import "fonts"
+@import "basecss"
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	overflow-x: hidden
+	font-family: "Helvetica", sans-serif
+	font-display: swap
+	font-weight: 300
+	background-color: #fff
+	accent-color: #000
+	input, textarea
+		border: #7e7e7e 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+.d-flex
+	display: flex
+
+.flex-center
+	justify-content: center
+	align-items: center
+
+.react-icons
+	vertical-align: middle
+
+.section
+	padding: 2rem 0

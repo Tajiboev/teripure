@@ -1,0 +1,78 @@
+.wrapper
+    position: fixed
+    width: 450px
+    height: 100%
+    background-color: #fff
+    top: 0
+    right: 0
+    transition: all .5s ease-in-out
+    padding: 2.5rem 1.875rem
+    display: flex
+    flex-direction: column
+    button
+        background-color: transparent
+        border: none
+        padding: 0.5rem 0.65rem
+
+.clearBtn
+    position: relative
+    svg
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+
+.hidden
+    transform: translateX(450px)
+
+.text
+    width: 100%
+    justify-content: space-between
+    p
+        font-weight: bold
+
+.product
+    display: grid
+    grid-template-columns: 1.5rem 4rem auto auto
+    align-items: center
+    gap: 4px
+    margin-top: 1.5rem
+    padding-top: 1.5rem
+    border-top: 1px solid #eee
+
+.counter
+    text-align: right
+    button, span
+        background-color: #eee
+    span
+        display: inline-flex
+        padding: 0.5rem
+
+.bottom
+    flex: 1
+    flex-direction: column
+    justify-content: flex-end
+    align-items: flex-start
+
+.priceCalculator
+    width: 100%
+    justify-content: space-between
+
+.buttons
+    width: 100%
+    flex-direction: column
+    a
+        width: 100%
+        padding: 0.5rem
+        background-color: #eee
+        border-radius: 2px
+        margin-top: 12px
+        text-align: center
+        text-decoration: none
+        background-color: #000
+        color: #fff
+        &:last-child
+            margin-top: 8px
+            background-color: #fff
+            color: #000
+            border: 1px solid #000
