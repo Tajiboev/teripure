@@ -25,16 +25,16 @@ const ShoppingBag = () => {
 		<aside className={classes}>
 			<section>
 				<div className={'d-flex ' + styles.text}>
-					<p>Shopping bag</p>
+					<p>Корзина</p>
 					<button className='d-flex' onClick={toggleBag}>
 						<IoCloseOutline className='react-icons' size={20} />
 					</button>
 				</div>
-				<div className='d-flex' style={{ alignItems: 'center' }}>
+				<div className={styles.cardSaved}>
 					<IoCheckmarkCircleOutline
 						className='react-icons'
 						size={16}></IoCheckmarkCircleOutline>
-					<p>Your cart is saved</p>
+					<p>Ваш выбор сохранён!</p>
 				</div>
 			</section>
 			<section>
@@ -51,7 +51,7 @@ const ShoppingBag = () => {
 					</div>
 					<div>
 						<p className={styles.price}>
-							<b>{price} UZS</b>
+							<b>{price} сум</b>
 						</p>
 						<p className={styles.description}>TeriPure Maximum</p>
 					</div>
@@ -64,17 +64,17 @@ const ShoppingBag = () => {
 			</section>
 			<section className={'d-flex ' + styles.bottom}>
 				<div className={'d-flex ' + styles.priceCalculator}>
-					<p>Total price:</p>
+					<p>Общая сумма:</p>
 					<p>
-						<b>{totalPrice} UZS</b>
+						<b>{totalPrice} сум</b>
 					</p>
 				</div>
 				<div className={'d-flex ' + styles.buttons}>
 					<Link to='/checkout' onClick={toggleBag}>
-						Check out
+						Заказать
 					</Link>
 					<Link to='/cart' onClick={toggleBag}>
-						View cart
+						Просмотреть корзину
 					</Link>
 				</div>
 			</section>

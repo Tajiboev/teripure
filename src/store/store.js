@@ -1,6 +1,14 @@
 import { createStore, action, computed, persist } from "easy-peasy";
 
 const store = createStore(persist({
+    isAuthenticated: false,
+    authenticate: action((state)=>{
+      state.isAuthenticated = true
+    }),
+    token: '',
+    setToken: action((state, payload)=>{
+      state.token = payload
+    }),
     price: 135000,
     itemsInBag: 0,
     totalPrice: computed(state => state.price * state.itemsInBag),
@@ -24,6 +32,10 @@ const store = createStore(persist({
     }),
     clearBag: action((state)=>{
       if(state.itemsInBag !== 0) state.itemsInBag = 0
+    }),
+    addToBag: action((state, payload) => {
+      console.log("payload: ", payload)
+      state.itemsInBag = state.itemsInBag + payload
     })
   }, {
     storage: localStorage

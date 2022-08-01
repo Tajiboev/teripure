@@ -54,12 +54,8 @@
         width: 14px
 
 .card
-    display: flex
-    flex-direction: column
-    align-items: flex-start
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1)
-    padding: 1.5rem
-    height: 100%
+    padding: 2rem 1.5rem
     border-radius: 2px
     h4
         font-size: 20px
@@ -85,10 +81,13 @@
 
 .subtotal
     width: 100%
-    padding: 1rem 0
+    padding: 1.5rem 0
     margin: 1.5rem 0
     border-top: 1px solid #eee
     border-bottom: 1px solid #eee
+    div
+        &:last-child
+            margin-top: 4px
 
 .total
     width: 100%
@@ -96,3 +95,14 @@
 .subtotal, .total
     div
         justify-content: space-between
+
+.orderButton
+    background-color: #000
+    color: #fff
+    border-radius: 3px
+    padding: 8px 1rem
+    margin-top: 1rem
+
+.dostavka
+    margin-top: 1.5rem
+    font-size: 14px

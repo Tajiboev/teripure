@@ -19,11 +19,6 @@ const Navbar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link className={styles.navlink} to='/svoystva'>
-							Свойства
-						</Link>
-					</li>
-					<li>
 						<Link className={styles.navlink} to='/otzivi'>
 							Отзывы
 						</Link>

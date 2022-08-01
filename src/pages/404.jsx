@@ -3,11 +3,11 @@ import Container from '../components/Container'
 
 const NotFound = () => {
 	return (
-		<div>
+		<main>
 			<Container>
 				<h4>Error 404. Page not found.</h4>
 			</Container>
-		</div>
+		</main>
 	)
 }
 

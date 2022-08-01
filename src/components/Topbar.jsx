@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from './Container'
+import Container from '../components/Container'
 import styles from '../styles/topbar.module.sass'
 import { IoEarthOutline, IoBagOutline } from 'react-icons/io5'
 
