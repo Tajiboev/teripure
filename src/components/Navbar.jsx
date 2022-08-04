@@ -28,6 +28,11 @@ const Navbar = () => {
 							Контакты
 						</Link>
 					</li>
+					<li>
+						<Link className={styles.navlink} to='/admin'>
+							Admin <i>test mode</i>
+						</Link>
+					</li>
 				</ul>
 			</Container>
 		</nav>

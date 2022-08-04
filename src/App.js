@@ -20,7 +20,8 @@ const App = () => {
 		<StoreProvider store={store}>
 			<>
 				<Routes>
-					<Route path='/' index element={<Home />} />
+					<Route path='/' exact element={<Home />} />
+					<Route path='/teripure' exact element={<Home />} />
 					<Route path='admin' element={<Admin />}>
 						<Route path='orders' element={<Orders/>} />
 						<Route path='products' element={<Products/>} />
