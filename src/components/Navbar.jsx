@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Container from './Container'
 import styles from '../styles/navbar.module.sass'
 
@@ -9,29 +9,32 @@ const Navbar = () => {
 			<Container className={styles.wrapper}>
 				<ul className='d-flex'>
 					<li>
-						<Link className={styles.navlink} to='/'>
+						<NavLink className={styles.navlink} to='/'>
 							Главная
-						</Link>
+						</NavLink>
 					</li>
 					<li>
-						<Link className={styles.navlink} to='/o-nas'>
+						<NavLink className={styles.navlink} to='/about-us'>
 							О нас
-						</Link>
+						</NavLink>
 					</li>
 					<li>
-						<Link className={styles.navlink} to='/otzivi'>
+						<NavLink className={styles.navlink} to='/reviews'>
 							Отзывы
-						</Link>
+						</NavLink>
 					</li>
 					<li>
-						<Link className={styles.navlink} to='/kontakti'>
+						<NavLink className={styles.navlink} to='/contact-us'>
 							Контакты
-						</Link>
+						</NavLink>
 					</li>
 					<li>
-						<Link className={styles.navlink} to='/admin'>
-							Admin <i>test mode</i>
-						</Link>
+						<NavLink className={styles.navlink} to='/admin'>
+							Админ{' '}
+							<sup>
+								<i>test</i>
+							</sup>
+						</NavLink>
 					</li>
 				</ul>
 			</Container>

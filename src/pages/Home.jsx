@@ -46,7 +46,7 @@ const Home = () => {
 						</Link>
 						<p>
 							{language === 'Русский'
-								? 'Ввиду того, что онлайн покупка на нашем сайте пока не доступна, продукт также можно приобрести в следующих аптеках: Сеть аптек Таблетка, Oxy-Med, Shoh-Farm, EURO PHARM MARKET и 5+ Сампи'
+								? `Ввиду того, что онлайн покупка на нашем сайте пока не доступна, продукт также можно приобрести в следующих аптеках: Сеть аптек Таблетка, Oxy-Med, Shoh-Farm, EURO PHARM MARKET и 5+ Сампи`
 								: 'Veb-saytimizda onlayn xarid hali mavjud emasligi sababli, mahsulotni quyidagi dorixonalarda ham sotib olish mumkin: Tabletka, Oxy-Med, Shoh-Pharm, EURO PHARM MARKET va 5+ Sampi'}
 						</p>
 					</div>

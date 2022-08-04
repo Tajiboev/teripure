@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import styles from '../styles/admin.module.sass'
+import styles from '../../styles/admin.module.sass'
 
 const Subscribers = () => {
 	const [subscribers, setSubscribers] = useState([])

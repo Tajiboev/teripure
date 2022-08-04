@@ -1,7 +1,7 @@
 import { useStoreState } from 'easy-peasy'
 import React from 'react'
 import { Navigate, Link, Outlet } from 'react-router-dom'
-import styles from '../styles/admin.module.sass'
+import styles from '../../styles/admin.module.sass'
 
 const Admin = () => {
 	const isAuthenticated = useStoreState((state) => state.isAuthenticated)
