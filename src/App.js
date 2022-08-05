@@ -15,6 +15,8 @@ import Orders from './pages/admin/Orders'
 import Products from './pages/admin/Products'
 import Subscribers from './pages/admin/Subscribers'
 import Contact from './pages/Contact'
+import About from './pages/About'
+
 
 const App = () => {
 	return (
@@ -30,6 +32,7 @@ const App = () => {
 					</Route>
 					<Route path='/product' element={<Product />} />
 					<Route path='/contact-us' element={<Contact />} />
+					<Route path='/about-us' element={<About />} />
 					<Route path='/login' element={<Login />} />
 					<Route path='/checkout' element={<Checkout/>} />
 					<Route path='*' element={<NotFound />} />
