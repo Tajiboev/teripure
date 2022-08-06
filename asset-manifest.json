@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.131dea0b.css",
-    "main.js": "/static/js/main.94a4a9cd.js",
+    "main.css": "/static/css/main.b09fd598.css",
+    "main.js": "/static/js/main.c81e86c7.js",
     "static/media/beforeafter.png": "/static/media/beforeafter.f9fba88315e7a9730a68.png",
     "static/media/main.jpg": "/static/media/main.4b43741807fccf4807e9.jpg",
     "static/media/image2.png": "/static/media/image2.be2882f38f441045f097.png",
@@ -14,16 +14,17 @@
     "static/media/HelveticaRegular.ttf": "/static/media/HelveticaRegular.31a272d75aa97b0dcb55.ttf",
     "static/media/HelveticaBold.eot": "/static/media/HelveticaBold.e7ab24fa6e70c3391cc9.eot",
     "static/media/HelveticaBold.ttf": "/static/media/HelveticaBold.d2d4622394c0e88a8c69.ttf",
+    "static/media/logo.png": "/static/media/logo.494c08e87df96824bf82.png",
     "static/media/HelveticaLight.woff": "/static/media/HelveticaLight.8b0d01542b9ea4d822c8.woff",
     "static/media/HelveticaBold.woff": "/static/media/HelveticaBold.e941872262a60140e525.woff",
     "static/media/HelveticaRegular.woff": "/static/media/HelveticaRegular.604bdf88d745293ed39d.woff",
     "index.html": "/index.html",
     "static/media/arrowIcon.svg": "/static/media/arrowIcon.813724d75ac77338131b5b64668532c8.svg",
-    "main.131dea0b.css.map": "/static/css/main.131dea0b.css.map",
-    "main.94a4a9cd.js.map": "/static/js/main.94a4a9cd.js.map"
+    "main.b09fd598.css.map": "/static/css/main.b09fd598.css.map",
+    "main.c81e86c7.js.map": "/static/js/main.c81e86c7.js.map"
   },
   "entrypoints": [
-    "static/css/main.131dea0b.css",
-    "static/js/main.94a4a9cd.js"
+    "static/css/main.b09fd598.css",
+    "static/js/main.c81e86c7.js"
   ]
 }
