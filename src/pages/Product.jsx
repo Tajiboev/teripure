@@ -225,6 +225,13 @@ const Product = () => {
 									</button>
 								</div>
 							</div>
+							<p>
+								<br />
+								Ввиду того, что онлайн покупка на нашем сайте
+								пока не доступна, продукт также можно приобрести
+								в следующих аптеках: Сеть аптек Таблетка,
+								Oxy-Med, Shoh-Farm, EURO PHARM MARKET и 5+ Сампи
+							</p>
 							{/* <div className={styles.features}>
 								<div className={styles.feature}>
 									<p>alcohol-free</p>
@@ -464,7 +471,7 @@ const Product = () => {
 								</div>
 							</div>
 							<div className={styles.detail}>
-								<h3>Джон Доу</h3>
+								<h3>Каримов Х.</h3>
 								<p>
 									TeriPure Maximum это ватные диски которые
 									содержат салициловую кислоту и имеют

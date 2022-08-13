@@ -10,6 +10,7 @@ import image1 from '../images/image1.png'
 import image2 from '../images/image2.png'
 import image3 from '../images/image3.png'
 import image4 from '../images/image4.png'
+import logo from '../images/logo.png'
 
 import icon from '../images/arrowIcon.svg'
 import mainImage from '../images/main.jpg'
@@ -31,6 +32,7 @@ const Home = () => {
 			<section className={'section ' + styles.hero}>
 				<Container className={'d-flex ' + styles.heroWrapper}>
 					<div className={styles.heroLeft}>
+						<img src={logo} alt='Teripure' />
 						<h1>
 							{language === 'Русский'
 								? 'Эффективные технологии в области ухода за кожей'

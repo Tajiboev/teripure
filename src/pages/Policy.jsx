@@ -7,7 +7,7 @@ import Backdrop from '../components/Backdrop'
 import Breadcrumb from '../components/Breadcrumb'
 
 import styles from '../styles/about.module.sass'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 import Footer from '../components/Footer'
 

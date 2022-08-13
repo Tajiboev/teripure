@@ -15,6 +15,7 @@ import { YMaps, Map, Placemark } from 'react-yandex-maps'
 
 import styles from '../styles/contact.module.sass'
 import Footer from '../components/Footer'
+import SendMessage from '../components/SendMessage'
 
 const Contact = () => {
 	return (
@@ -76,6 +77,17 @@ const Contact = () => {
 									</a>
 								</span>
 							</p>
+							<p>
+								<span>
+									Instagram:{' '}
+									<a
+										href='https://instagram.com/teripure_uz'
+										target='_blank'
+										rel='noopener noreferrer'>
+										@teripure_uz
+									</a>
+								</span>
+							</p>
 						</div>
 					</div>
 					<div className={styles.info}>
@@ -107,43 +119,7 @@ const Contact = () => {
 						</Map>
 					</YMaps>
 				</div>
-				<div className={styles.formWrapper}>
-					<form>
-						<h2>Отправить сообщение</h2>
-
-						<div>
-							<input
-								type='text'
-								name='name'
-								id='name'
-								placeholder='Полное имя'
-							/>
-							<input
-								type='text'
-								name='email'
-								id='email'
-								placeholder='Электронный адрес'
-							/>
-						</div>
-						<textarea
-							name='text'
-							id='text'
-							rows='10'
-							placeholder='Текст сообщения'></textarea>
-						<div>
-							<input
-								type='checkbox'
-								name='agree'
-								id='agree'
-								defaultChecked
-							/>
-							<label htmlFor='agree'>
-								Согласие на обработку персональных данных
-							</label>
-						</div>
-						<button>Отправить</button>
-					</form>
-				</div>
+				<SendMessage />
 			</Container>
 			<Footer />
 		</>
