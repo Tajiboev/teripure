@@ -1,12 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.1c9e1c63.css",
-    "main.js": "/static/js/main.ecc0562c.js",
+    "main.css": "/static/css/main.abb01b5e.css",
+    "main.js": "/static/js/main.973a29e5.js",
     "static/media/main.jpg": "/static/media/main.4b43741807fccf4807e9.jpg",
     "static/media/image2.png": "/static/media/image2.be2882f38f441045f097.png",
     "static/media/image3.png": "/static/media/image3.09443e4f86fbd1b1d69e.png",
     "static/media/image1.png": "/static/media/image1.3e5577011bfdbceb3231.png",
     "static/media/image4.png": "/static/media/image4.b04e5f71e6cbd87a8a6f.png",
+    "static/media/ProximaNovaThin.eot": "/static/media/ProximaNovaThin.a96ccdb72bae035527b0.eot",
+    "static/media/ProximaNovaLight.eot": "/static/media/ProximaNovaLight.dc970b778a98f9a75423.eot",
+    "static/media/ProximaNovaThin.ttf": "/static/media/ProximaNovaThin.5e83e6e77a83c0c10927.ttf",
+    "static/media/ProximaNovaLight.ttf": "/static/media/ProximaNovaLight.f70705f204f9b7f11d76.ttf",
+    "static/media/ProximaNovaRegular.eot": "/static/media/ProximaNovaRegular.d97f8f32c098b28c3ab0.eot",
+    "static/media/ProximaNovaRegular.ttf": "/static/media/ProximaNovaRegular.b078618b41b9b6629ea0.ttf",
+    "static/media/ProximaNovaBold.eot": "/static/media/ProximaNovaBold.787088b281e017f8c449.eot",
+    "static/media/ProximaNovaBold.ttf": "/static/media/ProximaNovaBold.7722451a8c88b6100185.ttf",
+    "static/media/ProximaNovaLight.woff": "/static/media/ProximaNovaLight.6f5ad2ca80abea2876d4.woff",
+    "static/media/ProximaNovaRegular.woff": "/static/media/ProximaNovaRegular.99528640efded3e12591.woff",
+    "static/media/ProximaNovaBold.woff": "/static/media/ProximaNovaBold.1f267da183b3d4fe3d5b.woff",
+    "static/media/ProximaNovaThin.woff": "/static/media/ProximaNovaThin.0faaabde0ab1027e87c6.woff",
     "static/media/HelveticaLight.eot": "/static/media/HelveticaLight.498b340ad7b977a94b4b.eot",
     "static/media/HelveticaLight.ttf": "/static/media/HelveticaLight.9c4794b091302442b6a0.ttf",
     "static/media/HelveticaRegular.eot": "/static/media/HelveticaRegular.66a1dc2793711aed94ac.eot",
@@ -19,11 +31,11 @@
     "static/media/HelveticaRegular.woff": "/static/media/HelveticaRegular.604bdf88d745293ed39d.woff",
     "index.html": "/index.html",
     "static/media/arrowIcon.svg": "/static/media/arrowIcon.813724d75ac77338131b5b64668532c8.svg",
-    "main.1c9e1c63.css.map": "/static/css/main.1c9e1c63.css.map",
-    "main.ecc0562c.js.map": "/static/js/main.ecc0562c.js.map"
+    "main.abb01b5e.css.map": "/static/css/main.abb01b5e.css.map",
+    "main.973a29e5.js.map": "/static/js/main.973a29e5.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c9e1c63.css",
-    "static/js/main.ecc0562c.js"
+    "static/css/main.abb01b5e.css",
+    "static/js/main.973a29e5.js"
   ]
 }
