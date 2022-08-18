@@ -1,15 +1,16 @@
 import React from 'react'
+import BButton from 'react-bootstrap/Button'
 
 const Button = ({
 	children,
 	loadingText = 'Загрузка...',
 	isLoading = false,
-	className,
+	...props
 }) => {
 	return (
-		<button className={className} disabled={isLoading}>
+		<BButton disabled={isLoading} {...props}>
 			{isLoading ? loadingText : children}
-		</button>
+		</BButton>
 	)
 }
 

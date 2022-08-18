@@ -1,0 +1,58 @@
+.dialog
+    border: 1px solid rgba(0, 0, 0, 0.25)
+    border-radius: 2px
+    padding: 1.5rem 2rem
+    margin-bottom: 1rem
+    fieldset
+        border: none
+        padding: 0
+        margin-top: 1rem
+    input, textarea
+        padding: 8px 12px
+        background-color: #f5f5f5
+        border: none
+        line-height: 1.6
+        font-family: "Helvetica"
+        font-size: 1rem
+        font-weight: 300
+
+.rating
+    padding: 1rem 0
+    p
+        margin-bottom: 8px
+    input[type=radio]
+        display: none
+    label
+        padding: 8px 12px
+        border: 1px solid #000
+        margin-right: 8px
+        border-radius: 2px
+    input:checked + label
+        background-color: #000
+        color: #fff
+
+.contactInfo
+    display: flex
+    gap: 1rem
+    width: 100%
+    div
+        display: flex
+        flex-direction: column
+        flex: 1
+
+.review
+    display: flex
+    flex-direction: column
+
+.controlButtons
+    button
+        border: 1px solid #000
+        padding: 6px 12px
+        border-radius: 2px
+        margin-top: 8px
+    button[type=submit]
+        background-color: #000
+        color: #fff
+        margin-right: 6px
+    button[type=reset]
+        background-color: transparent

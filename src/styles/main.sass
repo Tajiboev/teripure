@@ -1,15 +1,15 @@
 @import "fonts"
 @import "basecss"
+$border-radius: 2px
+@import "~bootstrap/scss/bootstrap"
 
 body
-	font-size: 16px
 	min-width: 320px
 	position: relative
 	line-height: 1.65
 	overflow-x: hidden
-	font-family: "Helvetica", sans-serif
+	font-family: "ProximaNova", sans-serif
 	font-display: swap
-	font-weight: 300
 	accent-color: #000
 
 button:disabled,
@@ -27,15 +27,19 @@ button[disabled]
 .text-center
 	text-align: center
 
-.d-flex
-	display: flex
-
-.flex-center
-	justify-content: center
-	align-items: center
-
 .react-icons
 	vertical-align: middle
 
 .section
 	padding: 2rem 0
+
+p
+	margin: 0
+
+a
+	text-decoration: none
+	color: #000
+
+ul, ol
+	padding: 0
+	margin: 0

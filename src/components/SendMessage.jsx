@@ -17,7 +17,7 @@ const SendMessage = () => {
 		let formData = {
 			name: name.current.value,
 			phoneNumber: phoneNumber.current.value,
-			message: message.current.value,
+			text: message.current.value,
 		}
 		axios
 			.post(

@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from '../styles/container.module.sass'
+import ContainerB from 'react-bootstrap/Container'
 
-const Container = ({ className = '', children }) => {
-	return <div className={styles.container + ' ' + className}>{children}</div>
+const Container = ({ children, ...props }) => {
+	return <ContainerB {...props}>{children}</ContainerB>
 }
 
 export default Container

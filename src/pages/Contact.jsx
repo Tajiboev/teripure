@@ -1,10 +1,7 @@
 import React from 'react'
-import Backdrop from '../components/Backdrop'
-import Breadcrumb from '../components/Breadcrumb'
+
 import Container from '../components/Container'
-import Navbar from '../components/Navbar'
-import ShoppingBag from '../components/ShoppingBag'
-import Topbar from '../components/Topbar'
+
 import {
 	IoLocationOutline,
 	IoCallOutline,
@@ -14,20 +11,12 @@ import {
 import { YMaps, Map, Placemark } from 'react-yandex-maps'
 
 import styles from '../styles/contact.module.sass'
-import Footer from '../components/Footer'
+
 import SendMessage from '../components/SendMessage'
 
 const Contact = () => {
 	return (
 		<>
-			<Backdrop />
-			<header className='header'>
-				<Topbar />
-				<Navbar />
-				<ShoppingBag />
-			</header>
-			<Breadcrumb />
-
 			<Container>
 				<div className={styles.hero}>
 					<h1>Оставайтесь с нами на связи</h1>
@@ -121,7 +110,6 @@ const Contact = () => {
 				</div>
 				<SendMessage />
 			</Container>
-			<Footer />
 		</>
 	)
 }
