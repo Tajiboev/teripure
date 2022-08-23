@@ -1,17 +1,15 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
+import { Outlet } from 'react-router-dom'
 
-const NotFound = () => {
+const Orders = () => {
 	return (
 		<>
 			<Container>
-				<br />
-				<h4>
-					<b>Страница не найдена!</b>
-				</h4>
+				<Outlet />
 			</Container>
 		</>
 	)
 }
 
-export default NotFound
+export default Orders

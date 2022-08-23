@@ -45,8 +45,8 @@ const CreateOrder = () => {
 			})
 			.catch((e) => {
 				console.log(e)
-				alert('Заказ не был оформлен!')
 				setIsSending(false)
+				alert('Заказ не был оформлен!')
 			})
 	}
 	return (

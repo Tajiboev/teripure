@@ -17,7 +17,9 @@ import Topbar from './components/Topbar'
 import Navbar from './components/Navbar'
 import ShoppingBag from './components/ShoppingBag'
 import Footer from './components/Footer'
-
+import Orders from './pages/Orders'
+import Order from './pages/Order'
+// import Payment from './pages/Payment'
 
 const App = () => {
 	return (
@@ -36,6 +38,9 @@ const App = () => {
 					<Route path='/contact-us' element={<Contact />} />
 					<Route path='/about-us' element={<About />} />
 					<Route path='/checkout' element={<Checkout/>} />
+					<Route path="/orders" element={<Orders />}>
+						<Route path=":orderId" element={<Order />} />
+					</Route>
 					<Route path='*' element={<NotFound />} />
 				</Routes>
 				<Footer />

@@ -19,7 +19,9 @@ const FAQS = () => {
 						{relevantFAQS.map((faq, i) => {
 							return (
 								<Accordion defaultActiveKey='0'>
-									<Accordion.Item eventKey={`${c}${i}`}>
+									<Accordion.Item
+										eventKey={`${c}${i}`}
+										style={{ 'margin-bottom': '4px' }}>
 										<Accordion.Header>
 											{faq.heading}
 										</Accordion.Header>
