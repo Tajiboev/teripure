@@ -1,12 +1,16 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
-import { Outlet } from 'react-router-dom'
+// import styles from '../styles/orders.module.sass'
 
 const Orders = () => {
 	return (
 		<>
 			<Container>
-				<Outlet />
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
 			</Container>
 		</>
 	)

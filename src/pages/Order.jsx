@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import Payment from './Payment'
+import styles from '../styles/orders.module.sass'
+import Container from 'react-bootstrap/Container'
+import Spinner from 'react-bootstrap/Spinner'
+import Button from 'react-bootstrap/Button'
 
 const Order = () => {
 	let { orderId } = useParams()
@@ -19,24 +23,95 @@ const Order = () => {
 			setLoading(false)
 		}
 		fetchData()
-	}, [])
+	}, [orderId])
 
 	console.log(orderInfo)
 
 	if (loading) {
-		return <p>Loading data...</p>
+		return (
+			<Container className={styles.container}>
+				<Spinner
+					animation='grow'
+					role='status'
+					className={styles.spinner}>
+					<span className='visually-hidden'>Loading...</span>
+				</Spinner>
+			</Container>
+		)
 	}
 
 	return (
-		<div>
-			<br />
-			<p>Имя: {orderInfo.customer.name}</p>
-			<p>Номер телефона: {orderInfo.customer.phoneNumber}</p>
-			<p>Адрес: {orderInfo.customer.address}</p>
-			<p>Количество: {orderInfo.quantity}</p>
-			<Payment orderId={orderInfo._id} />
-			<br />
-		</div>
+		<Container className={styles.container}>
+			<div className={styles.wrapper}>
+				<div className={styles.section}>
+					<h2>
+						Заказ №{orderInfo._id} от{' '}
+						{new Date(orderInfo.createdAt).toLocaleDateString()}
+					</h2>
+					<h3 className={styles.capitalize}>{orderInfo.status}</h3>
+				</div>
+				<div className={styles.section}>
+					<div className={styles.spread}>
+						<p>Отлата:</p>
+						<p className={styles.capitalize}>
+							{orderInfo.paymentStatus}
+						</p>
+					</div>
+
+					<div className={styles.spread}>
+						<p>Доставка:</p>
+						<p>Оплачивается отдельно</p>
+					</div>
+				</div>
+				<div className={styles.section}>
+					<h3>Получатель</h3>
+					<div className={styles.spread}>
+						<p>Имя:</p>
+						<p>{orderInfo.customer.name}</p>
+					</div>
+					<div className={styles.spread}>
+						<p>Номер телефона:</p>
+						<p>{orderInfo.customer.phoneNumber}</p>
+					</div>
+				</div>
+				<div className={styles.section}>
+					<h3>Адрес доставки</h3>
+					<address>{orderInfo.customer.address}</address>
+				</div>
+				<div className={styles.section}>
+					<h3>Содержимое заказа</h3>
+					<div className={styles.spread}>
+						<p>{orderInfo.product.name}</p>
+						<p>
+							{orderInfo.product.price} x {orderInfo.quantity}
+						</p>
+					</div>
+				</div>
+				<div className={styles.section}>
+					<h3>Итого</h3>
+					<div className={styles.spread}>
+						<p>Сумма заказа:</p>
+						<p>{orderInfo.amount} сум</p>
+					</div>
+				</div>
+				<div className={styles.buttonWrapper}>
+					{orderInfo.paymentStatus === 'оплачено' ? (
+						<Link to='/contact-us'>
+							<Button variant='dark' className='pl-2 pr-2'>
+								Связаться с нами
+							</Button>
+						</Link>
+					) : (
+						<Payment
+							orderId={orderInfo._id}
+							amount={orderInfo.amount}
+							variant='dark'
+							className={styles.paymentButton}
+						/>
+					)}
+				</div>
+			</div>
+		</Container>
 	)
 }
 

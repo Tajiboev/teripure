@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
 
-const Payment = ({ orderId }) => {
+const Payment = ({ orderId, amount, className, ...props }) => {
 	useEffect(() => {
 		const script = document.createElement('script')
 
@@ -16,7 +16,7 @@ const Payment = ({ orderId }) => {
 				{
 					service_id: 24817,
 					merchant_id: 17292,
-					amount: 1001.0,
+					amount,
 					transaction_param: orderId,
 					merchant_user_id: 27796,
 				},
@@ -31,9 +31,9 @@ const Payment = ({ orderId }) => {
 		}
 	})
 	return (
-		<div>
-			<Button className='input-btn'>Payment</Button>
-		</div>
+		<Button {...props} className={'input-btn ' + className}>
+			Оплатить заказ
+		</Button>
 	)
 }
 

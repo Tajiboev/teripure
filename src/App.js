@@ -38,9 +38,8 @@ const App = () => {
 					<Route path='/contact-us' element={<Contact />} />
 					<Route path='/about-us' element={<About />} />
 					<Route path='/checkout' element={<Checkout/>} />
-					<Route path="/orders" element={<Orders />}>
-						<Route path=":orderId" element={<Order />} />
-					</Route>
+					<Route path="/orders" element={<Orders />}/>
+					<Route path="/orders/:orderId" exact element={<Order />} />
 					<Route path='*' element={<NotFound />} />
 				</Routes>
 				<Footer />
