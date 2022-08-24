@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Button from 'react-bootstrap/Button'
 
 const Payment = ({ orderId }) => {
 	useEffect(() => {
@@ -15,8 +16,8 @@ const Payment = ({ orderId }) => {
 				{
 					service_id: 24817,
 					merchant_id: 17292,
-					amount: 1000.0,
-					transaction_param: 'b00545',
+					amount: 1001.0,
+					transaction_param: orderId,
 					merchant_user_id: 27796,
 				},
 				function (data) {
@@ -28,10 +29,10 @@ const Payment = ({ orderId }) => {
 		return () => {
 			document.body.removeChild(script)
 		}
-	}, [])
+	})
 	return (
 		<div>
-			<button className='input-btn'>Payment</button>
+			<Button className='input-btn'>Payment</Button>
 		</div>
 	)
 }

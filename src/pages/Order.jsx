@@ -1,29 +1,41 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import Payment from './Payment'
 
 const Order = () => {
 	let { orderId } = useParams()
 
 	const [orderInfo, setOrderInfo] = useState({})
+	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
-		axios
-			.get(`https://obscure-beach-21124.herokuapp.com/orders/${orderId}`)
-			.then((response) => {
-				setOrderInfo(response.data)
-			})
-			.catch((e) => {
-				alert(e.message)
-			})
-	})
+		const fetchData = async () => {
+			setLoading(true)
+			const result = await axios.get(
+				`https://obscure-beach-21124.herokuapp.com/orders/${orderId}`
+			)
+			setOrderInfo(result.data)
+			setLoading(false)
+		}
+		fetchData()
+	}, [])
+
+	console.log(orderInfo)
+
+	if (loading) {
+		return <p>Loading data...</p>
+	}
 
 	return (
 		<div>
-			<h4>{orderInfo.name}</h4>
-			<h4>{orderInfo.address}</h4>
-			<h4>{orderInfo.amount}</h4>
-			<h4>{orderInfo.quantity}</h4>
+			<br />
+			<p>Имя: {orderInfo.customer.name}</p>
+			<p>Номер телефона: {orderInfo.customer.phoneNumber}</p>
+			<p>Адрес: {orderInfo.customer.address}</p>
+			<p>Количество: {orderInfo.quantity}</p>
+			<Payment orderId={orderInfo._id} />
+			<br />
 		</div>
 	)
 }

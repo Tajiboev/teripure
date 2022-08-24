@@ -4,8 +4,10 @@ import axios from 'axios'
 import { useStoreState } from 'easy-peasy'
 import Button from './Button'
 import Modal from 'react-bootstrap/Modal'
+import { useNavigate } from 'react-router-dom'
 
 const CreateOrder = () => {
+	let navigate = useNavigate()
 	let itemsInBag = useStoreState((state) => state.itemsInBag)
 
 	const form = useRef(null)
@@ -18,30 +20,33 @@ const CreateOrder = () => {
 	const [isSending, setIsSending] = useState(false)
 	const [show, setShow] = useState(false)
 
+	// const [orderId, setOrderId] = useState('')
+
 	const handleClose = () => setShow(false)
-	const handleShow = () => setShow(true)
+	// const handleShow = () => setShow(true)
 
 	const submit = function (e) {
 		e.preventDefault()
 		setIsSending(true)
 		let formData = {
-			name: name.current.value,
-			phoneNumber: phoneNumber.current.value,
-			address: [
-				street.current.value,
-				house.current.value,
-				apt.current.value,
-			].join(', '),
+			customer: {
+				name: name.current.value,
+				phoneNumber: phoneNumber.current.value,
+				address: [
+					street.current.value,
+					house.current.value,
+					apt.current.value,
+				].join(', '),
+			},
 			quantity: itemsInBag,
 			product: '62e67e83e2f38321945f2c60',
 		}
 		axios
 			.post('https://obscure-beach-21124.herokuapp.com/orders', formData)
 			.then((result) => {
-				console.log(result)
-				handleShow()
 				setIsSending(false)
 				form.current.reset()
+				navigate(`/orders/${result.data._id}`)
 			})
 			.catch((e) => {
 				console.log(e)
@@ -55,9 +60,12 @@ const CreateOrder = () => {
 				<Modal.Header closeButton>
 					<p>
 						<b>Оформление заказа</b>
+						Payment
 					</p>
 				</Modal.Header>
-				<Modal.Body>Заказ был успешно оформлен, спасибо!</Modal.Body>
+				<Modal.Body>
+					<p>Заказ был успешно оформлен, спасибо!</p>
+				</Modal.Body>
 			</Modal>
 			<form className={styles.form} onSubmit={submit} ref={form}>
 				<section className={'d-flex ' + styles.top}>
