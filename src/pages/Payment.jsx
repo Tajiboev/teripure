@@ -16,7 +16,7 @@ const Payment = ({ orderId, amount, className, ...props }) => {
 				{
 					service_id: 24817,
 					merchant_id: 17292,
-					amount,
+					amount: 1200,
 					transaction_param: orderId,
 					merchant_user_id: 27796,
 				},
