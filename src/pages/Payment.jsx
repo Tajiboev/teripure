@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
+import axios from 'axios'
 
 const Payment = ({ orderId, amount, className, ...props }) => {
 	useEffect(() => {
@@ -21,7 +22,22 @@ const Payment = ({ orderId, amount, className, ...props }) => {
 					merchant_user_id: 27796,
 				},
 				function (data) {
-					console.log('closed', data.status)
+					if (data.status === 2) {
+						axios
+							.patch(
+								`https://obscure-beach-21124.herokuapp.com/orders/${orderId}`,
+								{
+									paymentStatus: 'оплачено',
+								}
+							)
+							.then((result) => {
+								console.log(result.data)
+							})
+							.catch((e) => {
+								console.log(e.message)
+							})
+					}
+					alert('Не удалось оплатить заказ!')
 				}
 			)
 		})
@@ -31,9 +47,11 @@ const Payment = ({ orderId, amount, className, ...props }) => {
 		}
 	})
 	return (
-		<Button {...props} className={'input-btn ' + className}>
-			Оплатить заказ
-		</Button>
+		<>
+			<Button {...props} className={'input-btn ' + className}>
+				Оплатить заказ
+			</Button>
+		</>
 	)
 }
 
