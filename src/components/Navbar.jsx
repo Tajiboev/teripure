@@ -28,6 +28,11 @@ const Navbar = () => {
 							Контакты
 						</NavLink>
 					</li>
+					<li>
+						<NavLink className={styles.navlink} to='/orders'>
+							Мои заказы
+						</NavLink>
+					</li>
 				</ul>
 			</Container>
 		</nav>
