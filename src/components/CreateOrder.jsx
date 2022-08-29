@@ -39,7 +39,7 @@ const CreateOrder = () => {
 				].join(', '),
 			},
 			quantity: itemsInBag,
-			product: '62e67e83e2f38321945f2c60',
+			product: '630c57f39d64102d54877f6c',
 		}
 		axios
 			.post('https://obscure-beach-21124.herokuapp.com/orders', formData)
