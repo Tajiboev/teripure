@@ -16,6 +16,7 @@ const CreateOrder = () => {
 	const street = useRef(null)
 	const house = useRef(null)
 	const apt = useRef(null)
+	const promoCode = useRef(null)
 
 	const [isSending, setIsSending] = useState(false)
 	const [show, setShow] = useState(false)
@@ -60,7 +61,6 @@ const CreateOrder = () => {
 				<Modal.Header closeButton>
 					<p>
 						<b>Оформление заказа</b>
-						Payment
 					</p>
 				</Modal.Header>
 				<Modal.Body>
@@ -121,6 +121,18 @@ const CreateOrder = () => {
 							id='apartment'
 							ref={apt}
 							required
+						/>
+					</div>
+				</section>
+				<section className={'d-flex ' + styles.bottom}>
+					<div className={styles.name}>
+						<label htmlFor='fullName'>Промо-код</label>
+						<input
+							type='text'
+							name='promoCode'
+							id='promoCode'
+							ref={promoCode}
+							style={{ maxWidth: '50%' }}
 						/>
 					</div>
 				</section>

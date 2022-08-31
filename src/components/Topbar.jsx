@@ -15,11 +15,7 @@ const Topbar = () => {
 		<section className={styles.topbar}>
 			<Container className={styles.wrapper}>
 				<div className={styles.promo}>
-					<p>
-						{language === 'Русский'
-							? 'Сайт работает в тестовом режиме'
-							: 'Sayt test rejimida ishlamoqda'}
-					</p>
+					<p>Доставка по городу Ташкент</p>
 				</div>
 				<div className={'d-flex ' + styles.utils}>
 					<button
