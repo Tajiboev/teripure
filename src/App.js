@@ -11,7 +11,7 @@ import Checkout from './pages/Checkout'
 import Contact from './pages/Contact'
 import About from './pages/About'
 
-// 
+//
 import Backdrop from './components/Backdrop'
 import Topbar from './components/Topbar'
 import Navbar from './components/Navbar'
@@ -24,26 +24,26 @@ import Order from './pages/Order'
 const App = () => {
 	return (
 		<StoreProvider store={store}>
-			<>
-				<Backdrop />
-				<header className='header'>
-					<Topbar />
-					<Navbar />
-					<ShoppingBag />
-				</header>
+			<Backdrop />
+			<header className='header'>
+				<Topbar />
+				<Navbar />
+				<ShoppingBag />
+			</header>
+			<main>
 				<Routes>
 					<Route path='/' exact element={<Home />} />
 					<Route path='/teripure' exact element={<Home />} />
 					<Route path='/product' element={<Product />} />
 					<Route path='/contact-us' element={<Contact />} />
 					<Route path='/about-us' element={<About />} />
-					<Route path='/checkout' element={<Checkout/>} />
-					<Route path="/orders" element={<Orders />}/>
-					<Route path="/orders/:orderId" exact element={<Order />} />
+					<Route path='/checkout' element={<Checkout />} />
+					<Route path='/orders' element={<Orders />} />
+					<Route path='/orders/:orderId' exact element={<Order />} />
 					<Route path='*' element={<NotFound />} />
 				</Routes>
-				<Footer />
-			</>
+			</main>
+			<Footer />
 		</StoreProvider>
 	)
 }

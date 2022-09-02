@@ -5,7 +5,12 @@ import styles from '../styles/backdrop.module.sass'
 const Backdrop = () => {
 	let show = useStoreState((state) => state.bagOpen)
 	let close = useStoreActions((actions) => actions.toggleBag)
-	return <div onClick={close} className={show ? styles.backdrop : ''}></div>
+	if (show) {
+		return (
+			<div onClick={close} className={show ? styles.backdrop : ''}></div>
+		)
+	}
+	return <></>
 }
 
 export default Backdrop
