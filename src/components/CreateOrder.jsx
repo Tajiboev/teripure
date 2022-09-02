@@ -38,7 +38,7 @@ const CreateOrder = () => {
 			},
 			quantity: itemsInBag,
 			product: '630c57f39d64102d54877f6c',
-			promoCode,
+			promoCode: promoCode.current.value,
 		}
 		axios
 			.post('https://obscure-beach-21124.herokuapp.com/orders', formData)
