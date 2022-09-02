@@ -21,10 +21,7 @@ const CreateOrder = () => {
 	const [isSending, setIsSending] = useState(false)
 	const [show, setShow] = useState(false)
 
-	// const [orderId, setOrderId] = useState('')
-
 	const handleClose = () => setShow(false)
-	// const handleShow = () => setShow(true)
 
 	const submit = function (e) {
 		e.preventDefault()
@@ -41,6 +38,7 @@ const CreateOrder = () => {
 			},
 			quantity: itemsInBag,
 			product: '630c57f39d64102d54877f6c',
+			promoCode,
 		}
 		axios
 			.post('https://obscure-beach-21124.herokuapp.com/orders', formData)
