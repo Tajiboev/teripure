@@ -11,7 +11,11 @@ const Reviews = () => {
 		axios
 			.get('https://obscure-beach-21124.herokuapp.com/reviews/')
 			.then((result) => {
-				setReviewData(result.data)
+				setReviewData(
+					result.data.filter((review) => {
+						return review.status === 'одобрено'
+					})
+				)
 			})
 	}, [])
 

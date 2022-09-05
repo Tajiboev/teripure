@@ -123,7 +123,7 @@ const Product = () => {
 							<FAQS />
 						</div>
 					</section>
-					<section className={styles.details}>
+					<section className={styles.details} id='reviews'>
 						<div className={styles.navigation}>
 							<h5>
 								<b>Отзывы клиентов</b>

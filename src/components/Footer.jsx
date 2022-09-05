@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Container from './Container'
 import styles from '../styles/footer.module.sass'
 import axios from 'axios'
@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
 	const email = useRef(null)
@@ -54,7 +55,7 @@ const Footer = () => {
 			<footer className={styles.footer}>
 				<Container className={styles.footerWrapper}>
 					<Row>
-						<Col xs md={4} lg={3}>
+						<Col xs md={3}>
 							<h5>О компании</h5>
 							<ul>
 								<li>
@@ -77,44 +78,25 @@ const Footer = () => {
 								</li>
 							</ul>
 						</Col>
-						<Col xs md={4} lg={3}>
-							<h5>Полезные ссылки</h5>
-							<ul>
-								<li>
-									<a href='/'>Новые товары</a>
-								</li>
-								<li>
-									<a href='/'>Хиты продаж</a>
-								</li>
-								<li>
-									<a href='/'>Скидки</a>
-								</li>
-								<li>
-									<a href='/'>Подарочная карта</a>
-								</li>
-							</ul>
-						</Col>
-						<Col xs md={4} lg={3}>
+						<Col xs md={3}>
 							<h5>Информация</h5>
 							<ul>
 								<li>
-									<a href='/'>Возврат товара</a>
+									<Link to='contact-us'>
+										Свяжитесь с нами
+									</Link>
 								</li>
 								<li>
-									<a href='/'>Свяжитесь с нами</a>
-								</li>
-								<li>
-									<a href='/'>Доставка</a>
-								</li>
-								<li>
-									<a href='/'>Условия</a>
+									<Link to='product'>
+										Часто задаваемые вопросы
+									</Link>
 								</li>
 								<li>
 									<a href='/'>Политика конфиденциальности</a>
 								</li>
 							</ul>
 						</Col>
-						<Col md={8} lg={3}>
+						<Col xs md={6}>
 							<h5>Сервис рассылки</h5>
 							<p>
 								Введите свой адрес электронной почты ниже, чтобы

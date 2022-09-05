@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Container from './Container'
 import styles from '../styles/navbar.module.sass'
+import { NavHashLink } from 'react-router-hash-link'
 
 const Navbar = () => {
 	return (
@@ -19,9 +20,11 @@ const Navbar = () => {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink className={styles.navlink} to='/reviews'>
+						<NavHashLink
+							className={styles.navlink}
+							to='/product#reviews'>
 							Отзывы
-						</NavLink>
+						</NavHashLink>
 					</li>
 					<li>
 						<NavLink className={styles.navlink} to='/contact-us'>
