@@ -86,10 +86,12 @@ const Order = () => {
 							{orderInfo.product.price} x {orderInfo.quantity}
 						</p>
 					</div>
-					<div className={styles.spread}>
-						<p>Скидка ({orderInfo.promoCode.code})</p>
-						<p>{orderInfo.promoCode.discount * 100}%</p>
-					</div>
+					{orderInfo.promoCode && (
+						<div className={styles.spread}>
+							<p>Скидка ({orderInfo.promoCode.code})</p>
+							<p>{orderInfo.promoCode.discount * 100}%</p>
+						</div>
+					)}
 				</div>
 				<div className={styles.section}>
 					<h3>Итого</h3>
