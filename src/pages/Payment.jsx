@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 import { useStoreActions } from 'easy-peasy'
 
 const Payment = ({
@@ -13,7 +12,6 @@ const Payment = ({
 	className,
 	...props
 }) => {
-	let navigate = useNavigate()
 	const clearBag = useStoreActions((actions) => actions.clearBag)
 
 	const [show, setShow] = useState(false)
@@ -50,7 +48,8 @@ const Payment = ({
 					</p>
 				</Modal.Header>
 				<Modal.Body>
-					<p>Вам был выставлен счет в система {paymentMethod}.uz!</p>
+					<p>Вам был выставлен счет в системе {paymentMethod}.uz!</p>
+					<br />
 					<p>
 						Товары будут доставлены в течении 48 часов после отлаты.
 					</p>
