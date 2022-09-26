@@ -1,7 +1,16 @@
 .navbar
     box-shadow: 0 4px 28px rgb(0 0 0 / 5%)
     ul
+        display: flex
         padding: 1rem 0
         justify-content: center
     li
         padding: 0 1.25rem
+
+@media screen and (max-width: 568px)
+    .navbar
+        ul
+            justify-content: space-between
+        li
+            padding: 0
+            font-size: 14px

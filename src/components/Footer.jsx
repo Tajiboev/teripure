@@ -55,7 +55,7 @@ const Footer = () => {
 			<footer className={styles.footer}>
 				<Container className={styles.footerWrapper}>
 					<Row>
-						<Col xs md={3}>
+						<Col xs={12} md={3} className='mb-4 mb-sm-0'>
 							<h5>О компании</h5>
 							<ul>
 								<li>
@@ -78,7 +78,7 @@ const Footer = () => {
 								</li>
 							</ul>
 						</Col>
-						<Col xs md={3}>
+						<Col xs={12} md={3} className='mb-4 mb-sm-0'>
 							<h5>Информация</h5>
 							<ul>
 								<li>
@@ -96,7 +96,7 @@ const Footer = () => {
 								</li>
 							</ul>
 						</Col>
-						<Col xs md={6}>
+						<Col xs={12} md={6} className='mb-2 mb-sm-0'>
 							<h5>Сервис рассылки</h5>
 							<p>
 								Введите свой адрес электронной почты ниже, чтобы

@@ -24,11 +24,14 @@ const Home = () => {
 			<section className={'section ' + styles.hero}>
 				<Container className={'d-flex ' + styles.heroWrapper}>
 					<Row>
-						<Col md lg={6} className={styles.heroLeft}>
+						<Col
+							md
+							lg={6}
+							className={'mb-4 mb-sm-0 ' + styles.heroLeft}>
 							<img src={logo} alt='Teripure' />
 							<h2>
 								{language === 'Русский'
-									? 'Эффективные технологии в области ухода за кожей'
+									? 'Думаете о чистой и здоровой коже, когда смотрите на себя в зеркало? Подумайте о Teripure.'
 									: 'Terini parvarish qilish sohasidagi samarali texnologiyalar'}
 							</h2>
 							<p>
@@ -65,7 +68,7 @@ const Home = () => {
 						<b>Тройное действие против акне</b>
 					</h3>
 					<Row className={styles.actionWrapper}>
-						<Col xs={6} md={4}>
+						<Col xs={12} md={4} className='mb-2 mb-sm-0'>
 							<div className={styles.action}>
 								<div className={styles.actionName}>
 									<p>Очищает</p>
@@ -79,7 +82,7 @@ const Home = () => {
 								</p>
 							</div>
 						</Col>
-						<Col xs={6} md={4}>
+						<Col xs={12} md={4} className='mb-2 mb-sm-0'>
 							<div className={styles.action}>
 								<div className={styles.actionName}>
 									<p>Лечит</p>
@@ -92,7 +95,7 @@ const Home = () => {
 								</p>
 							</div>
 						</Col>
-						<Col xs={6} md={4}>
+						<Col xs={12} md={4} className='mb-2 mb-sm-0'>
 							<div className={styles.action}>
 								<div className={styles.actionName}>
 									<p>Предотвращает</p>
@@ -107,28 +110,40 @@ const Home = () => {
 						</Col>
 					</Row>
 					<Row>
-						<Col xs={6} md={3} className={styles.imageContainer}>
+						<Col
+							xs={12}
+							md={3}
+							className={'mb-2 mb-sm-0 ' + styles.imageContainer}>
 							<img
 								className='img-responsive'
 								src={image1}
 								alt='Product 1'
 							/>
 						</Col>
-						<Col xs={6} md={3} className={styles.imageContainer}>
+						<Col
+							xs={12}
+							md={3}
+							className={'mb-2 mb-sm-0 ' + styles.imageContainer}>
 							<img
 								className='img-responsive'
 								src={image2}
 								alt='Product 1'
 							/>
 						</Col>
-						<Col xs={6} md={3} className={styles.imageContainer}>
+						<Col
+							xs={12}
+							md={3}
+							className={'mb-2 mb-sm-0 ' + styles.imageContainer}>
 							<img
 								className='img-responsive'
 								src={image3}
 								alt='Product 1'
 							/>
 						</Col>
-						<Col xs={6} md={3} className={styles.imageContainer}>
+						<Col
+							xs={12}
+							md={3}
+							className={'mb-2 mb-sm-0 ' + styles.imageContainer}>
 							<img
 								className='img-responsive'
 								src={image4}

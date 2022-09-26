@@ -36,3 +36,32 @@
 .contactLink
     padding: 2rem 0 3rem 0
     text-align: center
+
+@media screen and (max-width: 568px)
+    .hero
+        padding: 1.5rem 0
+        text-align: left
+        p
+            max-width: 100%
+    .content
+        display: flex
+        flex-direction: column
+        padding: 0
+        h2
+            margin-bottom: 8px
+            margin-top: 4px
+            text-align: center
+    .content:last-of-type
+        flex-direction: column-reverse
+        margin-top: 1rem
+    .textWrapper
+        div
+            max-width: 100%
+    .imageWrapper
+        margin-top: 12px
+        img
+            max-width: 100%
+    .contactLink
+        text-align: left
+        a
+            text-decoration: underline

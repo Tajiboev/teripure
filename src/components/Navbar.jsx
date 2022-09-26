@@ -8,7 +8,7 @@ const Navbar = () => {
 	return (
 		<nav className={styles.navbar}>
 			<Container className={styles.wrapper}>
-				<ul className='d-flex'>
+				<ul>
 					<li>
 						<NavLink className={styles.navlink} to='/'>
 							Главная

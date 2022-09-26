@@ -28,7 +28,7 @@ const Contact = () => {
 				</div>
 				<div className={styles.infoWrapper}>
 					<div className={styles.info}>
-						<IoLocationOutline size={32} />
+						<IoLocationOutline />
 						<div>
 							<p className={styles.headline}>Адрес</p>
 							<address>
@@ -43,7 +43,7 @@ const Contact = () => {
 						</div>
 					</div>
 					<div className={styles.info}>
-						<IoCallOutline size={32} />
+						<IoCallOutline />
 						<div>
 							<p className={styles.headline}>Контакты</p>
 							<p>
@@ -80,7 +80,7 @@ const Contact = () => {
 						</div>
 					</div>
 					<div className={styles.info}>
-						<IoTimeOutline size={32} />
+						<IoTimeOutline />
 						<div>
 							<p className={styles.headline}>Время работы</p>
 							<p>
@@ -101,7 +101,7 @@ const Contact = () => {
 								zoom: 13,
 							}}
 							width='auto'
-							height='530px'>
+							className={styles.map}>
 							<Placemark
 								geometry={[41.3207479456, 69.3002333068]}
 							/>

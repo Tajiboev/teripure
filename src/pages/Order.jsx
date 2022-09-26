@@ -12,6 +12,12 @@ const Order = () => {
 
 	const [orderInfo, setOrderInfo] = useState({})
 	const [loading, setLoading] = useState(true)
+	const [paymentMethod, setPaymentMethod] = useState('click')
+
+	const handlePaymentMethodChange = (e) => {
+		setPaymentMethod(e.target.value)
+		console.log(e.target.value)
+	}
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -24,8 +30,6 @@ const Order = () => {
 		}
 		fetchData()
 	}, [orderId])
-
-	console.log(orderInfo)
 
 	if (loading) {
 		return (
@@ -45,7 +49,7 @@ const Order = () => {
 			<div className={styles.wrapper}>
 				<div className={styles.section}>
 					<h2>
-						Заказ №{orderInfo._id} от{' '}
+						Заказ №{orderInfo.orderNumber} от{' '}
 						{new Date(orderInfo.createdAt).toLocaleDateString()}
 					</h2>
 					<h3 className={styles.capitalize}>{orderInfo.status}</h3>
@@ -54,7 +58,7 @@ const Order = () => {
 					<div className={styles.spread}>
 						<p>Отлата:</p>
 						<p className={styles.capitalize}>
-							{orderInfo.paymentStatus}
+							{orderInfo.isPaid ? 'Оплачено' : 'Не оплачено'}
 						</p>
 					</div>
 
@@ -100,8 +104,43 @@ const Order = () => {
 						<p>{orderInfo.amount} сум</p>
 					</div>
 				</div>
+				<div className={styles.section}>
+					<h3>Способ оплаты</h3>
+					<div>
+						<div className='d-flex'>
+							<input
+								type='radio'
+								name='payment'
+								id='click'
+								value='click'
+								checked={paymentMethod === 'click'}
+								onChange={handlePaymentMethodChange}
+							/>
+							<label
+								htmlFor='click'
+								style={{ marginLeft: '5px' }}>
+								Click.uz
+							</label>
+						</div>
+						<div className='d-flex'>
+							<input
+								type='radio'
+								name='payment'
+								id='payme'
+								value='payme'
+								checked={paymentMethod === 'payme'}
+								onChange={handlePaymentMethodChange}
+							/>
+							<label
+								htmlFor='payme'
+								style={{ marginLeft: '5px' }}>
+								Payme.uz
+							</label>
+						</div>
+					</div>
+				</div>
 				<div className={styles.buttonWrapper}>
-					{orderInfo.paymentStatus === 'оплачено' ? (
+					{orderInfo.isPaid ? (
 						<Link to='/contact-us'>
 							<Button variant='dark' className='pl-2 pr-2'>
 								Связаться с нами
@@ -111,6 +150,8 @@ const Order = () => {
 						<Payment
 							orderId={orderInfo._id}
 							amount={orderInfo.amount}
+							paymentMethod={paymentMethod}
+							phoneNumber={orderInfo.customer.phoneNumber}
 							variant='dark'
 							className={styles.paymentButton}
 						/>

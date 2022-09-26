@@ -5,61 +5,42 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useStoreActions } from 'easy-peasy'
 
-const Payment = ({ orderId, amount, className, ...props }) => {
+const Payment = ({
+	orderId,
+	amount,
+	phoneNumber,
+	paymentMethod,
+	className,
+	...props
+}) => {
 	let navigate = useNavigate()
 	const clearBag = useStoreActions((actions) => actions.clearBag)
 
 	const [show, setShow] = useState(false)
+	const [loading, setLoading] = useState(false)
 	const handleClose = () => {
 		setShow(false)
-		navigate('/')
+		clearBag()
 	}
-	const handleShow = () => setShow(true)
 
-	useEffect(() => {
-		const script = document.createElement('script')
-
-		script.src = 'https://my.click.uz/pay/checkout.js'
-		script.async = true
-
-		document.body.appendChild(script)
-
-		var linkEl = document.querySelector('.input-btn')
-		linkEl.addEventListener('click', function () {
-			window.createPaymentRequest(
+	const handlePayment = async () => {
+		console.log('payment button click')
+		setLoading(true)
+		if (paymentMethod === 'click') {
+			const response = await axios.post(
+				'https://obscure-beach-21124.herokuapp.com/payment/click/createInvoice',
 				{
-					service_id: 24817,
-					merchant_id: 17292,
+					merchant_trans_id: orderId,
 					amount,
-					transaction_param: orderId,
-					merchant_user_id: 27796,
-				},
-				function (data) {
-					if (data.status === 2) {
-						axios
-							.patch(
-								`https://obscure-beach-21124.herokuapp.com/orders/${orderId}`,
-								{
-									paymentStatus: 'оплачено',
-								}
-							)
-							.then((result) => {
-								console.log(result.data)
-								handleShow()
-								clearBag()
-							})
-							.catch((e) => {
-								console.log(e.message)
-							})
-					}
+					phone_number: phoneNumber,
 				}
 			)
-		})
-
-		return () => {
-			document.body.removeChild(script)
+			console.log(response.data)
+			setLoading(false)
+			setShow(true)
 		}
-	})
+	}
+
 	return (
 		<>
 			<Modal show={show} onHide={handleClose}>
@@ -69,10 +50,9 @@ const Payment = ({ orderId, amount, className, ...props }) => {
 					</p>
 				</Modal.Header>
 				<Modal.Body>
-					<p>Заказ был успешно оплачен, спасибо!</p>
+					<p>Вам был выставлен счет в система {paymentMethod}.uz!</p>
 					<p>
-						Мы отправим ваш заказ в ближайшее время. Товары будут
-						доставлены в течении 48 часов
+						Товары будут доставлены в течении 48 часов после отлаты.
 					</p>
 					<br />
 					<p>
@@ -81,7 +61,11 @@ const Payment = ({ orderId, amount, className, ...props }) => {
 					</p>
 				</Modal.Body>
 			</Modal>
-			<Button {...props} className={'input-btn ' + className}>
+			<Button
+				{...props}
+				className={'input-btn ' + className}
+				isLoading={loading}
+				onClick={handlePayment}>
 				Оплатить заказ
 			</Button>
 		</>

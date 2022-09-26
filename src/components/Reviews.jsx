@@ -51,11 +51,12 @@ const Reviews = () => {
 					<IoStar className='react-icons' size={16} />
 					<IoStar className='react-icons' size={16} />
 					<IoStar className='react-icons' size={16} />
+					<div>
+						{!averageRating ? '0.0' : averageRating} (
+						{numberOfReviews} отзывов)
+					</div>
 				</div>
-				<div>
-					{!averageRating ? '0.0' : averageRating} ({numberOfReviews}{' '}
-					отзывов)
-				</div>
+
 				<div className={styles.writeReview}>
 					<button onClick={toggleForm}>
 						{formOpen ? 'Закрыть форму' : 'Оставить отзыв'}

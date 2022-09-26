@@ -23,13 +23,15 @@
     justify-content: center
     svg
         margin-top: 2px
+        height: 32px
+        width: 32px
     address
         font-style: normal
     span
         color: #7e7e7e
 
 .headline
-    font-size: 20px
+    font-size: 1.25rem
     font-weight: 600
     margin-bottom: 0.5rem
 
@@ -72,3 +74,12 @@
         background-color: #000
         color: #fff
         border-radius: 2px
+
+@media screen and (max-width: 568px)
+    .infoWrapper
+        grid-template-columns: 1fr
+    .info
+        justify-content: flex-start
+        svg
+            height: 24px
+            width: 24px
