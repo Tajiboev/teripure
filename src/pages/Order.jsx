@@ -104,60 +104,8 @@ const Order = () => {
 						<p>{orderInfo.amount} сум</p>
 					</div>
 				</div>
-				<div className={styles.section}>
-					<h3>Способ оплаты</h3>
-					<div>
-						<div className='d-flex'>
-							<input
-								type='radio'
-								name='payment'
-								id='click'
-								value='click'
-								checked={paymentMethod === 'click'}
-								onChange={handlePaymentMethodChange}
-							/>
-							<label
-								htmlFor='click'
-								style={{ marginLeft: '5px' }}>
-								Click.uz
-							</label>
-						</div>
-						<div className='d-flex'>
-							<input
-								type='radio'
-								name='payment'
-								id='payme'
-								value='payme'
-								checked={paymentMethod === 'payme'}
-								onChange={handlePaymentMethodChange}
-							/>
-							<label
-								htmlFor='payme'
-								style={{ marginLeft: '5px' }}>
-								Payme.uz
-							</label>
-						</div>
-					</div>
-				</div>
-				<div className={styles.buttonWrapper}>
-					{orderInfo.isPaid ? (
-						<Link to='/contact-us'>
-							<Button variant='dark' className='pl-2 pr-2'>
-								Связаться с нами
-							</Button>
-						</Link>
-					) : (
-						<Payment
-							orderId={orderInfo._id}
-							amount={orderInfo.amount}
-							paymentMethod={paymentMethod}
-							phoneNumber={orderInfo.customer.phoneNumber}
-							variant='dark'
-							className={styles.paymentButton}
-						/>
-					)}
-				</div>
 			</div>
+			<Payment order={orderInfo} />
 		</Container>
 	)
 }

@@ -6,6 +6,13 @@ import './styles/main.sass'
 import 'react-toastify/dist/ReactToastify.css'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+    gtmId: 'GTM-M9C6RG6'
+}
+
+TagManager.initialize(tagManagerArgs)
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

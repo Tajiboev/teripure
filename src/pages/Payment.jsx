@@ -1,73 +1,33 @@
 import { useState } from 'react'
-import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
-import { useStoreActions } from 'easy-peasy'
 
-const Payment = ({
-	orderId,
-	amount,
-	phoneNumber,
-	paymentMethod,
-	className,
-	...props
-}) => {
-	const clearBag = useStoreActions((actions) => actions.clearBag)
+const Payment = ({ order, ...props }) => {
+	const { merchant_trans_id, amount, phoneNumber } = order
 
-	const [show, setShow] = useState(false)
 	const [loading, setLoading] = useState(false)
-	const handleClose = () => {
-		setShow(false)
-		clearBag()
-	}
 
-	const handlePayment = async () => {
-		console.log('payment button click')
+	const handleClickPayment = async () => {
 		setLoading(true)
-		if (paymentMethod === 'click') {
+		try {
 			const response = await axios.post(
 				'https://obscure-beach-21124.herokuapp.com/payment/click/createInvoice',
 				{
-					merchant_trans_id: orderId,
+					merchant_trans_id,
 					amount,
 					phone_number: phoneNumber,
 				}
 			)
-			console.log(response.data)
+		} catch {
 			setLoading(false)
-			setShow(true)
 		}
+		setLoading(false)
 	}
 
 	return (
-		<>
-			<Modal show={show} onHide={handleClose}>
-				<Modal.Header closeButton>
-					<p>
-						<b>Оплата заказа</b>
-					</p>
-				</Modal.Header>
-				<Modal.Body>
-					<p>Вам был выставлен счет в системе {paymentMethod}.uz!</p>
-					<br />
-					<p>
-						Товары будут доставлены в течении 48 часов после отлаты.
-					</p>
-					<br />
-					<p>
-						Номер вашего заказа: {orderId}. Сохраните этот номер,
-						пожалуйста!
-					</p>
-				</Modal.Body>
-			</Modal>
-			<Button
-				{...props}
-				className={'input-btn ' + className}
-				isLoading={loading}
-				onClick={handlePayment}>
-				Оплатить заказ
-			</Button>
-		</>
+		<div>
+			<button className='click-button'>Click</button>
+			<button className='payme-button'>Payme</button>
+		</div>
 	)
 }
 
