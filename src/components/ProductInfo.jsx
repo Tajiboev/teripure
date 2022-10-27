@@ -69,11 +69,6 @@ const ProductInfo = () => {
 					<button onClick={addToBag}>Добавить в корзину</button>
 				</div>
 			</div>
-			<p>
-				<br />
-				Продукт также можно приобрести в следующих аптеках: Сеть аптек
-				Таблетка, Oxy-Med, Shoh-Farm, EURO PHARM MARKET и 5+ Сампи
-			</p>
 		</div>
 	)
 }

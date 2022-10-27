@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Instagram from '../images/instagram.png'
 import Container from '../components/Container'
 
 import {
@@ -62,13 +62,21 @@ const Contact = () => {
 								<span>
 									Электронный адрес:{' '}
 									<a href='mailto:mtajiboev@gmail.com'>
-										mtajiboev@gmail
+										mtajiboev@teripure.uz
 									</a>
 								</span>
 							</p>
 							<p>
 								<span>
-									Instagram:{' '}
+									<img
+										src={Instagram}
+										alt='instagram'
+										width={18}
+										style={{
+											marginRight: '4px',
+											marginBottom: '1px',
+										}}
+									/>
 									<a
 										href='https://instagram.com/teripure_uz'
 										target='_blank'

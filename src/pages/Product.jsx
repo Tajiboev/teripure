@@ -8,10 +8,16 @@ import image4 from '../images/image3.png'
 import ProductInfo from '../components/ProductInfo'
 import FAQS from '../components/DisplayFAQS'
 import Reviews from '../components/Reviews'
+import { Helmet } from 'react-helmet'
 
 const Product = () => {
 	return (
 		<>
+			<Helmet>
+				<title>
+					Салфетки Teripure - Заказать ватные диски для ухода за лицом
+				</title>
+			</Helmet>
 			<section className='section'>
 				<Container>
 					<section className={styles.productInfo}>

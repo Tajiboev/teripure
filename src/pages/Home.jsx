@@ -48,11 +48,11 @@ const Home = () => {
 										: 'Sotib olish'}
 								</Button>
 							</Link>
-							<p>
+							{/* <p>
 								{language === 'Русский'
 									? `Продукт также можно приобрести в следующих аптеках: Сеть аптек Таблетка, Oxy-Med, Shoh-Farm, EURO PHARM MARKET и 5+ Сампи`
 									: 'Mahsulotni quyidagi dorixonalarda ham sotib olish mumkin: Tabletka, Oxy-Med, Shoh-Pharm, EURO PHARM MARKET va 5+ Sampi'}
-							</p>
+							</p> */}
 						</Col>
 						<Col md lg={6} className={styles.heroRight}>
 							<div className={styles.heroImage}>

@@ -15,7 +15,7 @@ const Topbar = () => {
 		<section className={styles.topbar}>
 			<Container className={styles.wrapper}>
 				<div className={styles.promo}>
-					<p>Доставка по городу Ташкент</p>
+					<p>Доставка по Ташкенту в течении 2 дней</p>
 				</div>
 				<div className={'d-flex ' + styles.utils}>
 					<button

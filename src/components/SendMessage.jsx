@@ -6,7 +6,7 @@ import Button from './Button'
 const SendMessage = () => {
 	const form = useRef(null)
 	const name = useRef(null)
-	const phoneNumber = useRef(null)
+	const email = useRef(null)
 	const message = useRef(null)
 
 	const [isSending, setIsSending] = useState(false)
@@ -16,7 +16,7 @@ const SendMessage = () => {
 		setIsSending(true)
 		let formData = {
 			name: name.current.value,
-			phoneNumber: phoneNumber.current.value,
+			email: email.current.value,
 			text: message.current.value,
 		}
 		axios
@@ -51,11 +51,11 @@ const SendMessage = () => {
 						required
 					/>
 					<input
-						type='tel'
-						name='phoneNumber'
-						id='phoneNumber'
-						placeholder='Номер телефона'
-						ref={phoneNumber}
+						type='email'
+						name='email'
+						id='email'
+						placeholder='Email'
+						ref={email}
 						required
 					/>
 				</div>

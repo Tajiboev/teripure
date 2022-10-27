@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { Link } from 'react-router-dom'
+import Instagram from '../images/instagram.png'
 
 const Footer = () => {
 	const email = useRef(null)
@@ -62,7 +63,15 @@ const Footer = () => {
 									<p>Контактные данные:</p>
 								</li>
 								<li>
-									Instagram:{' '}
+									<img
+										src={Instagram}
+										alt='instagram'
+										width={18}
+										style={{
+											marginRight: '4px',
+											marginBottom: '1px',
+										}}
+									/>
 									<a
 										href='https://instagram.com/teripure_uz'
 										target='_blank'

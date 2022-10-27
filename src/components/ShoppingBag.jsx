@@ -73,9 +73,6 @@ const ShoppingBag = () => {
 					<Link to='/checkout' onClick={toggleBag}>
 						Заказать
 					</Link>
-					<Link to='/cart' onClick={toggleBag}>
-						Просмотреть корзину
-					</Link>
 				</div>
 			</section>
 		</aside>
