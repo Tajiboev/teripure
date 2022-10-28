@@ -4,6 +4,7 @@ import styles from '../styles/topbar.module.sass'
 import { IoEarthOutline, IoBagOutline } from 'react-icons/io5'
 
 import { useStoreActions, useStoreState } from 'easy-peasy'
+import Text from '../components/Text'
 
 const Topbar = () => {
 	const changeLang = useStoreActions((actions) => actions.changeLanguage)
@@ -15,7 +16,11 @@ const Topbar = () => {
 		<section className={styles.topbar}>
 			<Container className={styles.wrapper}>
 				<div className={styles.promo}>
-					<p>Доставка по Ташкенту в течении 2 дней</p>
+					<Text
+						lang={language}
+						ru='Доставка по Ташкенту в течении 2 дней'
+						uz="Toshkent shahri bo'yicha yetkazib berish bepul"
+					/>
 				</div>
 				<div className={'d-flex ' + styles.utils}>
 					<button

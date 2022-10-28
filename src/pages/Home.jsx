@@ -16,6 +16,7 @@ import { useStoreState } from 'easy-peasy'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
+import Text from '../components/Text'
 
 const Home = () => {
 	let language = useStoreState((state) => state.displayLanguage)
@@ -30,22 +31,26 @@ const Home = () => {
 							className={'mb-4 mb-sm-0 ' + styles.heroLeft}>
 							<img src={logo} alt='Teripure' />
 							<h2>
-								{language === 'Русский'
-									? 'Думаете о чистой и здоровой коже, когда смотрите на себя в зеркало? Подумайте о Teripure.'
-									: 'Terini parvarish qilish sohasidagi samarali texnologiyalar'}
+								<Text
+									lang={language}
+									ru='Думаете о чистой и здоровой коже, когда смотрите на себя в зеркало? Подумайте о Teripure.'
+									uz="O'zingizga oynaga qaraganingizda toza va sog'lom ter haqida o'ylaysizmi? Teripurni o'ylab ko'ring."></Text>
 							</h2>
 							<p>
-								{language === 'Русский'
-									? 'Решения для создания яркой, гладкой здоровой кожи без угрей, с постоянным чувством чистоты'
-									: 'Yorqin, silliq, aknesiz soglom teri va doimiy tozalik hissini taminlovchi echimlar'}
+								<Text
+									lang={language}
+									ru='Решения для создания яркой, гладкой здоровой кожи без угрей, с постоянным чувством чистоты'
+									uz="Doimiy tozalik hissi bilan yorqin, silliq, aknesiz sog'lom teri uchun yechimlar."></Text>
 							</p>
 							<Link to='/product'>
 								<Button
 									variant='dark'
 									className={styles.button}>
-									{language === 'Русский'
-										? 'Купить'
-										: 'Sotib olish'}
+									<Text
+										lang={language}
+										ru='Купить'
+										uz='Sotib olish'
+									/>
 								</Button>
 							</Link>
 							{/* <p>
@@ -65,46 +70,82 @@ const Home = () => {
 			<section className={'section ' + styles.tripleAction}>
 				<Container>
 					<h3 className='text-center'>
-						<b>Тройное действие против акне</b>
+						<b>
+							<Text
+								lang={language}
+								ru='Тройное действие против акне'
+								uz='Aknega qarshi uch tomonlama harakat'
+							/>
+						</b>
 					</h3>
 					<Row className={styles.actionWrapper}>
 						<Col xs={12} md={4} className='mb-2 mb-sm-0'>
 							<div className={styles.action}>
 								<div className={styles.actionName}>
-									<p>Очищает</p>
+									<p>
+										<Text
+											lang={language}
+											ru='Очищает'
+											uz='Tozalaydi'
+										/>
+									</p>
 									<img src={icon} alt='icon' />
 								</div>
 								<p className={styles.actionDescription}>
-									Салфетки TeriPure прочищают поры и
-									растворяют глубоко засевший жир. Они убирают
-									даже ту грязь, с которой не справляются
-									очищающие средства и мыло.
+									<Text
+										lang={language}
+										ru='Салфетки TeriPure прочищают поры и
+											растворяют глубоко засевший жир. Они убирают
+											даже ту грязь, с которой не справляются
+											очищающие средства и мыло.'
+										uz="TeriPure ko'zalarni yopib qo'yadi va chuqur yog'ni eritadi. Ular hatto tozalovchi va sovun ham bardosh bera olmaydigan axloqsizlikni olib tashlashadi."
+									/>
 								</p>
 							</div>
 						</Col>
 						<Col xs={12} md={4} className='mb-2 mb-sm-0'>
 							<div className={styles.action}>
 								<div className={styles.actionName}>
-									<p>Лечит</p>
+									<p>
+										<Text
+											lang={language}
+											ru='Лечит'
+											uz='Shifo beradi'
+										/>
+									</p>
 									<img src={icon} alt='icon' />
 								</div>
 								<p className={styles.actionDescription}>
-									TeriPure убирает имеющиеся акне и устраняют
-									угри благодаря салициловой кислоте,
-									проверенному средству против угрей.
+									<Text
+										lang={language}
+										ru='TeriPure убирает имеющиеся акне и устраняют
+											угри благодаря салициловой кислоте,
+											проверенному средству против угрей.'
+										uz="TeriPure mavjud aknelarni tozalaydi va qora nuqtalarni salitsil kislotasi bilan yo'q qiladi, akne davolashda isbotlangan."
+									/>
 								</p>
 							</div>
 						</Col>
 						<Col xs={12} md={4} className='mb-2 mb-sm-0'>
 							<div className={styles.action}>
 								<div className={styles.actionName}>
-									<p>Предотвращает</p>
+									<p>
+										<Text
+											lang={language}
+											ru='Предотвращает'
+											uz='Oldini oladi'
+										/>
+									</p>
 									<img src={icon} alt='icon' />
 								</div>
 								<p className={styles.actionDescription}>
-									при регулярном использовании салфетки
-									TeriPure предотвращают высыпания на коже еще
-									до их появления.
+									<Text
+										lang={language}
+										ru='При регулярном использовании салфетки
+											TeriPure предотвращают высыпания на коже еще
+											до их появления.'
+										uz="Muntazam foydalanish bilan TeriPure salfetkalari akne paydo bo'lishidan oldin ularni oldini oladi."
+									/>
 								</p>
 							</div>
 						</Col>

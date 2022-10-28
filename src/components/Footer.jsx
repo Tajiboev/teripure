@@ -8,8 +8,11 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { Link } from 'react-router-dom'
 import Instagram from '../images/instagram.png'
+import Text from './Text'
+import { useStoreState } from 'easy-peasy'
 
 const Footer = () => {
+	const language = useStoreState((state) => state.displayLanguage)
 	const email = useRef(null)
 	const form = useRef(null)
 
@@ -37,7 +40,13 @@ const Footer = () => {
 			})
 			.catch((e) => {
 				setIsSending(false)
-				alert('Подписка не была оформлена!')
+				alert(
+					<Text
+						lang={language}
+						ru='Подписка не была оформлена!'
+						uz="Obuna bo'lishda xatolik yuz berdi!"
+					/>
+				)
 			})
 	}
 
@@ -46,21 +55,43 @@ const Footer = () => {
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
 					<p>
-						<b>Подписка на рассылку</b>
+						<b>
+							<Text
+								lang={language}
+								ru='Подписка на рассылку'
+								uz="Obuna bo'lish"
+							/>
+						</b>
 					</p>
 				</Modal.Header>
 				<Modal.Body>
-					Подписка была успешно оформлена, спасибо!
+					<Text
+						lang={language}
+						ru='Подписка была успешно оформлена, спасибо!'
+						uz="Obuna muvaffaqiyatli bo'ldi, rahmat!"
+					/>
 				</Modal.Body>
 			</Modal>
 			<footer className={styles.footer}>
 				<Container className={styles.footerWrapper}>
 					<Row>
 						<Col xs={12} md={3} className='mb-4 mb-sm-0'>
-							<h5>О компании</h5>
+							<h5>
+								<Text
+									lang={language}
+									ru='О компании'
+									uz='Kompaniya haqida'
+								/>
+							</h5>
 							<ul>
 								<li>
-									<p>Контактные данные:</p>
+									<p>
+										<Text
+											lang={language}
+											ru='Контактные данные:'
+											uz="Aloqa uchun ma'lumotlar:"
+										/>
+									</p>
 								</li>
 								<li>
 									<img
@@ -80,7 +111,11 @@ const Footer = () => {
 									</a>
 								</li>
 								<li>
-									Телефон:{' '}
+									<Text
+										lang={language}
+										ru='Телефон:'
+										uz='Telefon'
+									/>
 									<a href='tel:+998994766477'>
 										+998 (99) 476 64 77
 									</a>
@@ -88,34 +123,135 @@ const Footer = () => {
 							</ul>
 						</Col>
 						<Col xs={12} md={3} className='mb-4 mb-sm-0'>
-							<h5>Информация</h5>
+							<h5>
+								<Text
+									lang={language}
+									ru='Информация'
+									uz="Ma'lumot"
+								/>
+							</h5>
 							<ul>
 								<li>
 									<Link to='contact-us'>
-										Свяжитесь с нами
+										<Text
+											lang={language}
+											ru='Свяжитесь с нами'
+											uz="Biz bilan bog'laning"
+										/>
 									</Link>
 								</li>
 								<li>
 									<Link to='product'>
-										Часто задаваемые вопросы
+										<Text
+											lang={language}
+											ru='Часто задаваемые вопросы'
+											uz="Ko'p so'raladigan savollar"
+										/>
 									</Link>
 								</li>
 								<li>
-									<a href='/'>Политика конфиденциальности</a>
+									<Link to='/'>
+										<Text
+											lang={language}
+											ru='Политика конфиденциальности'
+											uz='Maxfiylik siyosati'
+										/>
+									</Link>
 								</li>
 							</ul>
 						</Col>
-						<Col xs={12} md={6} className='mb-2 mb-sm-0'>
-							<h5>Сервис рассылки</h5>
+						<Col xs={12} md={3} className='mb-4 mb-sm-0'>
+							<h5>
+								<Text
+									lang={language}
+									ru='Партнёры'
+									uz='Hamkorlarimiz'
+								/>
+							</h5>
+							<ul>
+								<li>
+									<a
+										href='https://tabletka.uz/'
+										target='_blank'
+										rel='noopener noreferrer'>
+										<Text
+											lang={language}
+											ru='Сеть аптек Таблетка'
+											uz='Tabletka'
+										/>
+									</a>
+								</li>
+								<li>
+									<a
+										href='http://oxymed.uz/'
+										target='_blank'
+										rel='noopener noreferrer'>
+										<Text
+											lang={language}
+											ru='Oxy-Med'
+											uz='Oxy-Med'
+										/>
+									</a>
+								</li>
+								<li>
+									<a
+										href='http://www.shohfarm.com/'
+										target='_blank'
+										rel='noopener noreferrer'>
+										<Text
+											lang={language}
+											ru='Shoh-Farm'
+											uz='Shoh-Farm'
+										/>
+									</a>
+								</li>
+								<li>
+									<a
+										href='https://arzonapteka.uz/ru/org/3416'
+										target='_blank'
+										rel='noopener noreferrer'>
+										<Text
+											lang={language}
+											ru='EURO PHARM MARKET'
+											uz='EURO PHARM MARKET'
+										/>
+									</a>
+								</li>
+								<li>
+									<a
+										href='https://arzonapteka.uz/ru/org/2393'
+										target='_blank'
+										rel='noopener noreferrer'>
+										<Text
+											lang={language}
+											ru='5+ Sampi'
+											uz='5+ Sampi'
+										/>
+									</a>
+								</li>
+							</ul>
+						</Col>
+						<Col xs={12} md={3} className='mb-2 mb-sm-0'>
+							<h5>
+								<Text
+									lang={language}
+									ru='Сервис рассылки'
+									uz='Axborot xizmati'
+								/>
+							</h5>
 							<p>
-								Введите свой адрес электронной почты ниже, чтобы
-								первыми узнавать о новых коллекциях.
+								<Text
+									lang={language}
+									ru='Введите свой адрес электронной почты ниже, чтобы
+									первыми узнавать о новых коллекциях.'
+									uz="Yangi to'plamlar haqida birinchilardan bo'lib xabardor bo'lish uchun quyida elektron pochta manzilingizni kiriting."
+								/>
 							</p>
 							<form onSubmit={submit} ref={form}>
 								<div className={styles.email}>
 									<input
 										type='email'
-										placeholder='Адрес электронной почты'
+										placeholder={'Email'}
 										ref={email}
 										required
 									/>
@@ -123,9 +259,19 @@ const Footer = () => {
 										type='submit'
 										variant='dark'
 										disabled={isSending}>
-										{isSending
-											? 'Обработка...'
-											: 'Подписаться'}
+										{isSending ? (
+											<Text
+												lang={language}
+												ru='Обработка...'
+												uz='Yuklanmoqda...'
+											/>
+										) : (
+											<Text
+												lang={language}
+												ru='Подписаться'
+												uz="Obuna bo'lish"
+											/>
+										)}
 									</Button>
 								</div>
 							</form>
