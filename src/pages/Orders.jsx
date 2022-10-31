@@ -24,7 +24,10 @@ const Orders = () => {
 				<Form onSubmit={onSubmit} ref={formRef} className={styles.form}>
 					<Form.Group className='mb-3' controlId='formBasicEmail'>
 						<Form.Label>
-							<Text lang={lang} ru='Номер заказа' uz=''></Text>
+							<Text
+								lang={lang}
+								ru='Номер заказа'
+								uz='Buyurtma raqami'></Text>
 						</Form.Label>
 						<Form.Control
 							type='text'

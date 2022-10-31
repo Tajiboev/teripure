@@ -1,9 +1,12 @@
 import axios from 'axios'
+import { useStoreState } from 'easy-peasy'
 import React, { useRef, useState } from 'react'
 import styles from '../styles/contact.module.sass'
 import Button from './Button'
+import Text from './Text'
 
 const SendMessage = () => {
+	const lang = useStoreState((state) => state.displayLanguage)
 	const form = useRef(null)
 	const name = useRef(null)
 	const email = useRef(null)
@@ -26,13 +29,21 @@ const SendMessage = () => {
 			)
 			.then((result) => {
 				console.log(result)
-				alert('Мы получили ваше сообщение. Спасибо!')
+				alert(
+					lang === 'Русский'
+						? 'Мы получили ваше сообщение. Спасибо!'
+						: 'Xabaringiz qabul qilindi. Rahmat!'
+				)
 				setIsSending(false)
 				form.current.reset()
 			})
 			.catch((e) => {
 				console.log(e.message)
-				alert('Сообщение не было отправлено!')
+				alert(
+					lang === 'Русский'
+						? 'Сообщение не было отправлено!'
+						: 'Xabar yuborilmadi!'
+				)
 				setIsSending(false)
 			})
 	}
@@ -40,13 +51,22 @@ const SendMessage = () => {
 	return (
 		<div className={styles.formWrapper}>
 			<form ref={form} onSubmit={sendMessage}>
-				<h2>Отправить сообщение</h2>
+				<h2>
+					<Text
+						lang={lang}
+						ru='Отправить сообщение'
+						uz='Xabar yuborish'></Text>
+				</h2>
 				<div>
 					<input
 						type='text'
 						name='name'
 						id='name'
-						placeholder='Полное имя'
+						placeholder={
+							lang === 'Русский'
+								? 'Полное имя'
+								: 'Ism va familiya'
+						}
 						ref={name}
 						required
 					/>
@@ -63,7 +83,9 @@ const SendMessage = () => {
 					name='text'
 					id='text'
 					rows='10'
-					placeholder='Текст сообщения'
+					placeholder={
+						lang === 'Русский' ? 'Текст сообщения' : 'Xabar matni'
+					}
 					ref={message}
 					required></textarea>
 				<div>
@@ -75,11 +97,18 @@ const SendMessage = () => {
 						required
 					/>
 					<label htmlFor='agree'>
-						Согласие на обработку персональных данных
+						<Text
+							lang={lang}
+							ru='Согласие на обработку персональных данных'
+							uz="Shaxsiy ma'lumotlarni qayta ishlashga rozilik"></Text>
 					</label>
 				</div>
-				<Button isLoading={isSending} loadingText={'Отправляем...'}>
-					Отправить
+				<Button
+					isLoading={isSending}
+					loadingText={
+						lang === 'Русский' ? 'Отправляем...' : 'Yuborilmoqda...'
+					}>
+					<Text lang={lang} ru='Отправить' uz='Yuborish'></Text>
 				</Button>
 			</form>
 		</div>
