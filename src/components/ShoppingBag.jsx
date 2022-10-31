@@ -2,11 +2,12 @@ import React from 'react'
 import styles from '../styles/shoppingbag.module.sass'
 import { useStoreState, useStoreActions } from 'easy-peasy'
 import { IoCloseOutline, IoCheckmarkCircleOutline } from 'react-icons/io5'
-
 import Image from '../images/image3.png'
 import { Link } from 'react-router-dom'
+import Text from './Text'
 
 const ShoppingBag = () => {
+	const lang = useStoreState((state) => state.displayLanguage)
 	const show = useStoreState((state) => state.bagOpen)
 	const itemsInBag = useStoreState((state) => state.itemsInBag)
 	const price = useStoreState((state) => state.price)
@@ -25,7 +26,9 @@ const ShoppingBag = () => {
 		<aside className={classes}>
 			<section>
 				<div className={'d-flex ' + styles.text}>
-					<p>Корзина</p>
+					<p>
+						<Text lang={lang} ru='Корзина' uz='Savat' />
+					</p>
 					<button className='d-flex' onClick={toggleBag}>
 						<IoCloseOutline className='react-icons' size={20} />
 					</button>
@@ -34,7 +37,13 @@ const ShoppingBag = () => {
 					<IoCheckmarkCircleOutline
 						className='react-icons'
 						size={16}></IoCheckmarkCircleOutline>
-					<p>Ваш выбор сохранён!</p>
+					<p>
+						<Text
+							lang={lang}
+							ru='Ваш выбор сохранён!'
+							uz='Sizning tanlovingiz saqlandi!'
+						/>
+					</p>
 				</div>
 			</section>
 			<section>
@@ -51,7 +60,9 @@ const ShoppingBag = () => {
 					</div>
 					<div>
 						<p className={styles.price}>
-							<b>{price} сум</b>
+							<b>
+								{price} <Text lang={lang} ru='сум' uz="so'm" />
+							</b>
 						</p>
 						<p className={styles.description}>TeriPure Maximum</p>
 					</div>
@@ -64,14 +75,21 @@ const ShoppingBag = () => {
 			</section>
 			<section className={'d-flex ' + styles.bottom}>
 				<div className={'d-flex ' + styles.priceCalculator}>
-					<p>Общая сумма:</p>
 					<p>
-						<b>{totalPrice} сум</b>
+						<Text
+							lang={lang}
+							ru='Общая сумма:'
+							uz='Umumiy narxi:'></Text>
+					</p>
+					<p>
+						<b>
+							{totalPrice} <Text lang={lang} ru='сум' uz="so'm" />
+						</b>
 					</p>
 				</div>
 				<div className={'d-flex ' + styles.buttons}>
 					<Link to='/checkout' onClick={toggleBag}>
-						Заказать
+						<Text lang={lang} ru='Заказать' uz='Buyurtma berish' />
 					</Link>
 				</div>
 			</section>

@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import styles from '../styles/orders.module.sass'
 import { useNavigate } from 'react-router-dom'
+import Text from '../components/Text'
+import { useStoreState } from 'easy-peasy'
 
 const Orders = () => {
 	let inputRef = useRef()
@@ -14,20 +16,31 @@ const Orders = () => {
 		navigate(`/orders/${inputRef.current.value}`)
 	}
 
+	const lang = useStoreState((state) => state.displayLanguage)
+
 	return (
 		<>
 			<Container>
 				<Form onSubmit={onSubmit} ref={formRef} className={styles.form}>
 					<Form.Group className='mb-3' controlId='formBasicEmail'>
-						<Form.Label>Номер заказа</Form.Label>
+						<Form.Label>
+							<Text lang={lang} ru='Номер заказа' uz=''></Text>
+						</Form.Label>
 						<Form.Control
 							type='text'
-							placeholder='Введите номер заказа'
+							placeholder={
+								lang === 'Русский'
+									? 'Введите номер заказа'
+									: 'Buyurtma raqami'
+							}
 							ref={inputRef}
 						/>
 					</Form.Group>
 					<Button variant='dark' type='submit'>
-						Получить информацию о заказе
+						<Text
+							lang={lang}
+							ru='Получить информацию о заказе'
+							uz="Buyurtma ma'lumotlarini olish"></Text>
 					</Button>
 				</Form>
 			</Container>

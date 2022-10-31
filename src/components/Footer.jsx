@@ -107,7 +107,7 @@ const Footer = () => {
 										href='https://instagram.com/teripure_uz'
 										target='_blank'
 										rel='noopener noreferrer'>
-										@teripure_uz
+										teripure_uz
 									</a>
 								</li>
 								<li>
