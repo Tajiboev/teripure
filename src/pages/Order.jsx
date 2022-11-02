@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Payment from './Payment'
 import styles from '../styles/orders.module.sass'
 import Container from 'react-bootstrap/Container'
 import Spinner from 'react-bootstrap/Spinner'
-import Button from 'react-bootstrap/Button'
 
 const Order = () => {
 	let { orderId } = useParams()
@@ -64,7 +63,7 @@ const Order = () => {
 
 					<div className={styles.spread}>
 						<p>Доставка:</p>
-						<p>Оплачивается отдельно</p>
+						<p>15,000 сум (Оплачивается отдельно)</p>
 					</div>
 				</div>
 				<div className={styles.section}>
@@ -104,8 +103,11 @@ const Order = () => {
 						<p>{orderInfo.amount} сум</p>
 					</div>
 				</div>
+				<div className={styles.section}>
+					<h3>Оплата</h3>
+					<Payment order={orderInfo} />
+				</div>
 			</div>
-			<Payment order={orderInfo} />
 		</Container>
 	)
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Instagram from '../images/instagram.png'
+import Instagram from '../images/instagram_1.png'
 import Container from '../components/Container'
 
 import {
@@ -88,8 +88,8 @@ const Contact = () => {
 								<span>
 									<Text
 										lang={lang}
-										ru='Мобильный:'
-										uz='Mobil:'
+										ru='Горячая линия:'
+										uz='Ishonch raqami:'
 									/>
 								</span>{' '}
 								<a href='tel:+998994766477'>
@@ -100,24 +100,12 @@ const Contact = () => {
 								<span>
 									<Text
 										lang={lang}
-										ru='Горячая линия:'
-										uz='Ishonch raqami:'
-									/>
-								</span>{' '}
-								<a href='tel:+998975700225'>
-									+998 (97) 570 02 25
-								</a>
-							</p>
-							<p>
-								<span>
-									<Text
-										lang={lang}
 										ru='Электронный адрес:'
 										uz='Elektron manzil:'
 									/>
-
-									<a href='mailto:mtajiboev@gmail.com'>
-										mtajiboev@teripure.uz
+									<a href='mailto:info@teripure.uz'>
+										{' '}
+										info@teripure.uz
 									</a>
 								</span>
 							</p>
@@ -126,7 +114,7 @@ const Contact = () => {
 									<img
 										src={Instagram}
 										alt='instagram'
-										width={18}
+										width={20}
 										style={{
 											marginRight: '4px',
 											marginBottom: '1px',
@@ -170,7 +158,7 @@ const Contact = () => {
 										uz='Shanba-Yakshanba:'
 									/>
 								</span>{' '}
-								09:30 - 20:30
+								10:00 - 18:00
 							</p>
 						</div>
 					</div>

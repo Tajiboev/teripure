@@ -9,6 +9,7 @@ import ProductInfo from '../components/ProductInfo'
 import FAQS from '../components/DisplayFAQS'
 import Reviews from '../components/Reviews'
 import { Helmet } from 'react-helmet'
+import IntText from '../components/IntText'
 
 const Product = () => {
 	return (
@@ -46,36 +47,66 @@ const Product = () => {
 					<section className={styles.details}>
 						<div className={styles.navigation}>
 							<h5>
-								<b>Детали продукта TeriPure Maximum</b>
+								<b>
+									<IntText
+										ru='Детали продукта TeriPure Maximum'
+										uz='TeriPure Maximum mahsulot tafsilotlari'
+									/>
+								</b>
 							</h5>
 							<ul>
-								<li>- Технология</li>
-								<li>- Рекомендация по применению</li>
-								<li>- Состав</li>
+								<li>
+									-{' '}
+									<IntText ru='Технология' uz='Tehnologiya' />
+								</li>
+								<li>
+									-{' '}
+									<IntText
+										ru='Рекомендация по применению'
+										uz="Qo'llash bo'yicha tavsiyalar"
+									/>
+								</li>
+								<li>
+									- <IntText ru='Состав' uz='Tarkibi' />
+								</li>
 							</ul>
 						</div>
 						<div className={styles.content}>
 							<div className={styles.detail}>
 								<h5>
-									<b>Технология</b>
+									<b>
+										<IntText
+											ru='Технология'
+											uz='Tehnologiya'
+										/>
+									</b>
 								</h5>
 								<p>
-									TeriPure Maximum это ватные диски которые
+									<IntText
+										ru='TeriPure Maximum это ватные диски которые
 									содержат салициловую кислоту и имеют
 									кератолический эффект. Продукт разработан
 									для всех типов кожи. Удаляет омертвевшие
 									клетки кожи, которые могут способствовать
 									закупорке пор, обеспечивая чистоту кожи при
-									постоянном использовании.
+									постоянном использовании.'
+										uz="TeriPure Maximum - salitsil kislotasini o'z ichiga olgan va keratolik ta'sirga ega bo'lgan paxta yostig'chalari. Mahsulot barcha teri turlari uchun mo'ljallangan. Teshiklarning tiqilib qolishiga hissa qo'shishi mumkin bo'lgan o'lik teri hujayralarini olib tashlaydi va doimiy foydalanish bilan terini toza qiladi."
+									/>
 								</p>
 							</div>
 							<div className={styles.detail}>
 								<br />
 								<h5>
-									<b>Рекомендация по применению</b>
+									<b>
+										<IntText
+											ru='Рекомендация по применению'
+											uz="Qo'llash bo'yicha tavsiyalar"
+										/>
+									</b>
 								</h5>
 								<p>
-									Вымойте кожу перед применением. Вытирайте
+									<IntText
+										ru='Вымойте кожу перед применением. Вытирайте
 									салфеткой весь пораженный участок от один
 									раз перед сном до трех раз в день. Вымойте
 									руки после применения. Не используйте на
@@ -89,16 +120,21 @@ const Product = () => {
 									может привести к увеличению сухости и
 									раздражения кожи. В таком случае необходимо
 									остановиться на одном средстве, если иное не
-									рекомендовано врачом.
+									рекомендовано врачом.'
+										uz="Ishlatishdan oldin terini yuving. Kuniga uch marta yotishdan oldin butun zararlangan hududni ro'molcha bilan artib oling. Qo'llashdan keyin qo'lingizni yuving. Nozik, xiralashgan yoki singan teriga ishlatmang. Ko'z bilan aloqa qilishdan saqlaning. Agar sizda tirnash xususiyati, ürtiker paydo bo'lsa, teridan mahsulotlarni yuving va shifokor bilan maslahatlashing. Ushbu mahsulotni ishlatish bilan bir vaqtda yoki undan keyin darhol boshqa akne davolashni qo'llash terining quruqligi va tirnash xususiyati kuchayishiga olib kelishi mumkin. Bunday holatda, agar shifokor boshqacha tavsiya qilmasa, bitta vositada to'xtash kerak."
+									/>
 								</p>
 							</div>
 							<div className={styles.detail}>
 								<br />
 								<h5>
-									<b>Состав</b>
+									<b>
+										<IntText ru='Состав' uz='Tarkibi' />
+									</b>
 								</h5>
 								<p>
-									В салфетках TeriPure совсем не содержит
+									<IntText
+										ru='В салфетках TeriPure совсем не содержит
 									спирта и эффективно действуют против угрей,
 									не оставляя ожогов и подходят для любых
 									типов кожи. Активный компонент Салициловая
@@ -107,7 +143,9 @@ const Product = () => {
 									ксиленсульфонат аммония, лимонная кислота,
 									этилгексилглицерин, ароматизатор, ментол,
 									феноксиэтанол, симетикон, борат натрия,
-									тетранатрий ЭДТА
+									тетранатрий ЭДТА'
+										uz="TeriPure salfetkalarida umuman alkogol yo'q va kuyish qoldirmasdan akne qarshi samarali va barcha teri turlariga mos keladi. Faol modda salitsil kislotasi 2,0%. Faol bo'lmagan ingredientlar: tozalangan suv, ammoniy lauril sulfat, ammoniy ksilen sulfonat, limon kislotasi, etilgeksilgliserin, lazzat, mentol, fenoksietanol, simetikon, natriy borat, tetrasodyum EDTA"
+									/>
 								</p>
 							</div>
 						</div>
@@ -115,14 +153,33 @@ const Product = () => {
 					<section className={styles.details}>
 						<div className={styles.navigation}>
 							<h5>
-								<b>Часто задаваемые вопросы</b>
+								<b>
+									<IntText
+										ru='Часто задаваемые вопросы'
+										uz="Ko'p so'raladigan savollar"
+									/>
+								</b>
 							</h5>
 							<ul>
-								<li>- Контакты</li>
-								<li>- Продукт</li>
-								<li>- Доставка</li>
-								<li>- Возврат</li>
-								<li>- Заказ</li>
+								<li>
+									- <IntText ru='Контакты' uz='Kontaktlar' />
+								</li>
+								<li>
+									- <IntText ru='Продукт' uz='Mahsulot' />
+								</li>
+								<li>
+									-{' '}
+									<IntText
+										ru='Доставка'
+										uz='Yetkazib berish'
+									/>
+								</li>
+								<li>
+									- <IntText ru='Возврат' uz='Qaytarish' />
+								</li>
+								<li>
+									- <IntText ru='Заказ' uz='Buyurtma' />
+								</li>
 							</ul>
 						</div>
 						<div className={styles.content}>
@@ -132,7 +189,12 @@ const Product = () => {
 					<section className={styles.details} id='reviews'>
 						<div className={styles.navigation}>
 							<h5>
-								<b>Отзывы клиентов</b>
+								<b>
+									<IntText
+										ru='Отзывы клиентов'
+										uz='Mijozlarning sharhlari'
+									/>
+								</b>
 							</h5>
 						</div>
 						<div className={styles.content}>

@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { Link } from 'react-router-dom'
-import Instagram from '../images/instagram.png'
+import Instagram from '../images/instagram_1.png'
 import Text from './Text'
 import { useStoreState } from 'easy-peasy'
 
@@ -97,7 +97,7 @@ const Footer = () => {
 									<img
 										src={Instagram}
 										alt='instagram'
-										width={18}
+										width={20}
 										style={{
 											marginRight: '4px',
 											marginBottom: '1px',

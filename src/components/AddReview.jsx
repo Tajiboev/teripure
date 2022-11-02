@@ -3,6 +3,7 @@ import styles from '../styles/addreview.module.sass'
 import Button from './Button'
 import axios from 'axios'
 import Modal from 'react-bootstrap/Modal'
+import IntText from './IntText'
 
 const AddReview = ({ classname, product = 'Teripure Maximum' }) => {
 	const [isSending, setIsSending] = useState(false)
@@ -50,17 +51,34 @@ const AddReview = ({ classname, product = 'Teripure Maximum' }) => {
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
 					<p>
-						<b>Отзыв о продукте</b>
+						<b>
+							<IntText
+								ru='Отзыв о продукте'
+								uz='Mahsulot haqida sharh'
+							/>
+						</b>
 					</p>
 				</Modal.Header>
-				<Modal.Body>Отзыв был успешно записан, спасибо!</Modal.Body>
+				<Modal.Body>
+					<IntText
+						ru='Отзыв был успешно записан, спасибо!'
+						uz='Sharh yozib olindi, rahmat!'></IntText>
+				</Modal.Body>
 			</Modal>
 			<div className={styles.dialog + ' ' + classname}>
 				<form ref={form} onSubmit={onSubmit}>
-					<h3>Отзыв о продукте {product}</h3>
+					<h3>
+						<IntText
+							ru='Отзыв о продукте Teripure Maximum'
+							uz='Teripure Maximum haqida sharhlar'></IntText>
+					</h3>
 					<fieldset className={styles.contactInfo}>
 						<div>
-							<label htmlFor='name'>Полное имя</label>
+							<label htmlFor='name'>
+								<IntText
+									ru='Полное имя'
+									uz='Ism va familiya'></IntText>
+							</label>
 							<input
 								type='text'
 								name='name'
@@ -70,7 +88,11 @@ const AddReview = ({ classname, product = 'Teripure Maximum' }) => {
 							/>
 						</div>
 						<div>
-							<label htmlFor='phoneNumber'>Номер телефона</label>
+							<label htmlFor='phoneNumber'>
+								<IntText
+									ru='Номер телефона'
+									uz='Telefon raqamingiz'></IntText>
+							</label>
 							<input
 								type='tel'
 								name='phoneNumber'
@@ -81,7 +103,11 @@ const AddReview = ({ classname, product = 'Teripure Maximum' }) => {
 						</div>
 					</fieldset>
 					<fieldset className={styles.review}>
-						<label htmlFor='name'>Текст отзыва</label>
+						<label htmlFor='name'>
+							<IntText
+								ru='Текст отзыва'
+								uz='Sharh matni'></IntText>
+						</label>
 						<textarea
 							name='review'
 							id='review'
@@ -92,7 +118,11 @@ const AddReview = ({ classname, product = 'Teripure Maximum' }) => {
 					<fieldset
 						className={styles.rating}
 						onChange={onRadioChange}>
-						<p>В целом, насколько вы удовлетворены продуктом?</p>
+						<p>
+							<IntText
+								ru='В целом, насколько вы удовлетворены продуктом?'
+								uz='Mahsulot bilan qanchalik mamnunsiz?'></IntText>
+						</p>
 						<input type='radio' name='rating' id='1' value={1} />
 						<label htmlFor='1'>1</label>
 						<input type='radio' name='rating' id='2' value={2} />
@@ -115,10 +145,10 @@ const AddReview = ({ classname, product = 'Teripure Maximum' }) => {
 							type='submit'
 							isLoading={isSending}
 							loadingText={'Записываем отзыв...'}>
-							Отправить
+							<IntText ru='Отправить' uz='Yuborish'></IntText>
 						</Button>
 						<button id='cancel' type='reset'>
-							Отменить
+							<IntText ru='Отменить' uz='Bekor qilish'></IntText>
 						</button>
 					</fieldset>
 				</form>

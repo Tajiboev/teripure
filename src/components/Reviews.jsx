@@ -4,6 +4,7 @@ import AddReview from '../components/AddReview'
 import { IoStar } from 'react-icons/io5'
 import Review from './Review'
 import axios from 'axios'
+import IntText from './IntText'
 
 const Reviews = () => {
 	const [reviewData, setReviewData] = useState([])
@@ -53,13 +54,17 @@ const Reviews = () => {
 					<IoStar className='react-icons' size={16} />
 					<div>
 						{!averageRating ? '0.0' : averageRating} (
-						{numberOfReviews} отзывов)
+						{numberOfReviews} <IntText ru='отзывов' uz='ta sharh' />
+						)
 					</div>
 				</div>
 
 				<div className={styles.writeReview}>
 					<button onClick={toggleForm}>
-						{formOpen ? 'Закрыть форму' : 'Оставить отзыв'}
+						<IntText
+							ru={formOpen ? 'Закрыть форму' : 'Оставить отзыв'}
+							uz={formOpen ? 'Yopish' : 'Sharh qoldirish'}
+						/>
 					</button>
 				</div>
 			</div>

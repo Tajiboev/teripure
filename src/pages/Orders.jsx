@@ -34,7 +34,7 @@ const Orders = () => {
 							placeholder={
 								lang === 'Русский'
 									? 'Введите номер заказа'
-									: 'Buyurtma raqami'
+									: 'Buyurtma raqamini kiriting'
 							}
 							ref={inputRef}
 						/>
@@ -43,7 +43,7 @@ const Orders = () => {
 						<Text
 							lang={lang}
 							ru='Получить информацию о заказе'
-							uz="Buyurtma ma'lumotlarini olish"></Text>
+							uz="Ma'lumot olish"></Text>
 					</Button>
 				</Form>
 			</Container>

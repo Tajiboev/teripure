@@ -3,6 +3,7 @@ import { IoStar, IoStarHalf } from 'react-icons/io5'
 import { useStoreActions } from 'easy-peasy'
 import { ToastContainer, toast, Slide } from 'react-toastify'
 import styles from '../styles/product.module.sass'
+import IntText from './IntText'
 
 const ProductInfo = () => {
 	let [count, setCount] = useState(1)
@@ -13,9 +14,13 @@ const ProductInfo = () => {
 		if (count === 1) return
 		setCount(count - 1)
 	}
+
+	const toggleBag = useStoreActions((actions) => actions.toggleBag)
+
 	const addAction = useStoreActions((actions) => actions.addToBag)
 	const addToBag = () => {
 		addAction(count)
+		toggleBag()
 		notify()
 	}
 
@@ -47,15 +52,22 @@ const ProductInfo = () => {
 			</div>
 			<div className={styles.description}>
 				<p>
-					Ватные диски содержащие салициловую кислоту и имеющие
-					кератолический эффект
+					<IntText
+						ru='Ватные диски содержащие салициловую кислоту и имеющие
+					кератолический эффект'
+						uz="Salitsil kislotasini o'z ichiga olgan va keratolik ta'sirga ega bo'lgan paxta yostig'chalari"
+					/>
 				</p>
 			</div>
 			<div className={styles.size}>
-				<span>50 шт.</span>
+				<span>
+					50 <IntText ru='шт.' uz='dona' />
+				</span>
 			</div>
 			<div className={styles.price}>
-				<span>135,000 сум</span>
+				<span>
+					135,000 <IntText ru='сум' uz="so'm" />
+				</span>
 			</div>
 			<div className={styles.form}>
 				<div className={styles.counter}>
@@ -66,7 +78,12 @@ const ProductInfo = () => {
 					<button onClick={increase}>+</button>
 				</div>
 				<div className={styles.addToBag}>
-					<button onClick={addToBag}>Добавить в корзину</button>
+					<button onClick={addToBag}>
+						<IntText
+							ru='Добавить в корзину'
+							uz="Savatga qo'shish"
+						/>
+					</button>
 				</div>
 			</div>
 		</div>
