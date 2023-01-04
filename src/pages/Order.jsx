@@ -137,14 +137,16 @@ const Order = () => {
 						</p>
 					</div>
 				</div>
-				<div className={styles.section}>
-					<h3>
-						<Text
-							ru='Оплатить'
-							uz="To'lovni amalga oshirish"></Text>
-					</h3>
-					<Payment order={order} />
-				</div>
+				{!order.isPaid && (
+					<div className={styles.section}>
+						<h3>
+							<Text
+								ru='Оплатить'
+								uz="To'lovni amalga oshirish"></Text>
+						</h3>
+						<Payment order={order} />
+					</div>
+				)}
 			</div>
 		</Container>
 	)

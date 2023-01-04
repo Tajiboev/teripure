@@ -16,8 +16,11 @@ const Payment = ({ order }) => {
 		setLoading(true)
 
 		const alert = {
-			pending: lang === 'ru' ? 'Записываем отзыв...' : 'Yuklanmoqda...',
-			success: lang === 'ru' ? 'Спасибо!' : 'Rahmat!',
+			pending: lang === 'ru' ? 'Обрабатываем заказ...' : 'Yuklanmoqda...',
+			success:
+				lang === 'ru'
+					? 'Вам был выставлен счёт в Click.uz!'
+					: 'Rahmat!',
 			error: lang === 'ru' ? 'Ошибка!' : 'Xatolik!',
 		}
 
