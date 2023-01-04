@@ -2,82 +2,74 @@ import { useRef, useState } from 'react'
 import styles from '../styles/addreview.module.sass'
 import Button from './Button'
 import axios from 'axios'
-import Modal from 'react-bootstrap/Modal'
-import IntText from './IntText'
+import Text from './Text'
+import { toast } from 'react-toastify'
+import { useStoreState } from 'easy-peasy'
 
-const AddReview = ({ classname, product = 'Teripure Maximum' }) => {
+const AddReview = ({ classname }) => {
 	const [isSending, setIsSending] = useState(false)
 	const [rating, setRating] = useState(5)
 	const form = useRef()
 	const name = useRef()
 	const phoneNumber = useRef()
 	const review = useRef()
+	const lang = useStoreState((state) => state.displayLanguage)
 
 	const onRadioChange = (e) => {
 		setRating(e.target.value)
 	}
 
-	const [show, setShow] = useState(false)
-	const handleClose = () => setShow(false)
-	const handleShow = () => setShow(true)
-
-	const onSubmit = (e) => {
+	const submitReview = async (e) => {
 		e.preventDefault()
 		setIsSending(true)
-		let formData = {
-			author: name.current.value,
+
+		const formData = {
+			product: '630c57f39d64102d54877f6c',
+			name: name.current.value,
 			phoneNumber: phoneNumber.current.value,
 			rating,
 			text: review.current.value,
 		}
-		console.log(formData)
-		axios
-			.post('https://obscure-beach-21124.herokuapp.com/reviews', formData)
-			.then((result) => {
-				// console.log(result)
-				handleShow()
-				setIsSending(false)
-				form.current.reset()
-			})
-			.catch((e) => {
-				console.log(e)
-				alert('Отзыв не был записан!')
-				setIsSending(false)
-			})
+
+		const alert = {
+			pending: lang === 'ru' ? 'Записываем отзыв...' : 'Yuklanmoqda...',
+			success: lang === 'ru' ? 'Спасибо!' : 'Rahmat!',
+			error: lang === 'ru' ? 'Ошибка!' : 'Xatolik!',
+		}
+
+		try {
+			await toast.promise(
+				axios.post(
+					'https://teripure-server.onrender.com/reviews',
+					formData
+				),
+				{
+					pending: alert.pending,
+					success: alert.success,
+					error: alert.error,
+				}
+			)
+		} catch (e) {
+		} finally {
+			setIsSending(false)
+		}
 	}
 
 	return (
 		<>
-			<Modal show={show} onHide={handleClose}>
-				<Modal.Header closeButton>
-					<p>
-						<b>
-							<IntText
-								ru='Отзыв о продукте'
-								uz='Mahsulot haqida sharh'
-							/>
-						</b>
-					</p>
-				</Modal.Header>
-				<Modal.Body>
-					<IntText
-						ru='Отзыв был успешно записан, спасибо!'
-						uz='Sharh yozib olindi, rahmat!'></IntText>
-				</Modal.Body>
-			</Modal>
 			<div className={styles.dialog + ' ' + classname}>
-				<form ref={form} onSubmit={onSubmit}>
+				<form ref={form} onSubmit={submitReview}>
 					<h3>
-						<IntText
+						<Text
 							ru='Отзыв о продукте Teripure Maximum'
-							uz='Teripure Maximum haqida sharhlar'></IntText>
+							uz='Teripure Maximum haqida sharhlar'></Text>
 					</h3>
 					<fieldset className={styles.contactInfo}>
 						<div>
 							<label htmlFor='name'>
-								<IntText
+								<Text
 									ru='Полное имя'
-									uz='Ism va familiya'></IntText>
+									uz='Ism va familiya'></Text>
 							</label>
 							<input
 								type='text'
@@ -89,14 +81,16 @@ const AddReview = ({ classname, product = 'Teripure Maximum' }) => {
 						</div>
 						<div>
 							<label htmlFor='phoneNumber'>
-								<IntText
+								<Text
 									ru='Номер телефона'
-									uz='Telefon raqamingiz'></IntText>
+									uz='Telefon raqamingiz'></Text>
 							</label>
 							<input
 								type='tel'
 								name='phoneNumber'
 								id='phoneNumber'
+								pattern='^\+998[0-9]{9}$'
+								title='Incorrect phone number format'
 								required
 								ref={phoneNumber}
 							/>
@@ -104,9 +98,7 @@ const AddReview = ({ classname, product = 'Teripure Maximum' }) => {
 					</fieldset>
 					<fieldset className={styles.review}>
 						<label htmlFor='name'>
-							<IntText
-								ru='Текст отзыва'
-								uz='Sharh matni'></IntText>
+							<Text ru='Текст отзыва' uz='Sharh matni'></Text>
 						</label>
 						<textarea
 							name='review'
@@ -119,9 +111,9 @@ const AddReview = ({ classname, product = 'Teripure Maximum' }) => {
 						className={styles.rating}
 						onChange={onRadioChange}>
 						<p>
-							<IntText
+							<Text
 								ru='В целом, насколько вы удовлетворены продуктом?'
-								uz='Mahsulot bilan qanchalik mamnunsiz?'></IntText>
+								uz='Mahsulot bilan qanchalik mamnunsiz?'></Text>
 						</p>
 						<input type='radio' name='rating' id='1' value={1} />
 						<label htmlFor='1'>1</label>
@@ -145,10 +137,10 @@ const AddReview = ({ classname, product = 'Teripure Maximum' }) => {
 							type='submit'
 							isLoading={isSending}
 							loadingText={'Записываем отзыв...'}>
-							<IntText ru='Отправить' uz='Yuborish'></IntText>
+							<Text ru='Отправить' uz='Yuborish'></Text>
 						</Button>
 						<button id='cancel' type='reset'>
-							<IntText ru='Отменить' uz='Bekor qilish'></IntText>
+							<Text ru='Отменить' uz='Bekor qilish'></Text>
 						</button>
 					</fieldset>
 				</form>

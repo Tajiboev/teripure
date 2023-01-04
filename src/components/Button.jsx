@@ -1,5 +1,5 @@
 import React from 'react'
-import BButton from 'react-bootstrap/Button'
+import BootstrapButton from 'react-bootstrap/Button'
 
 const Button = ({
 	children,
@@ -8,9 +8,9 @@ const Button = ({
 	...props
 }) => {
 	return (
-		<BButton disabled={isLoading} {...props}>
+		<BootstrapButton disabled={isLoading} {...props}>
 			{isLoading ? loadingText : children}
-		</BButton>
+		</BootstrapButton>
 	)
 }
 

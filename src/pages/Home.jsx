@@ -12,14 +12,13 @@ import icon from '../images/arrowIcon.svg'
 import mainImage from '../images/main.jpg'
 
 import { Link } from 'react-router-dom'
-import { useStoreState } from 'easy-peasy'
+
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Text from '../components/Text'
 
 const Home = () => {
-	let language = useStoreState((state) => state.displayLanguage)
 	return (
 		<>
 			<section className={'section ' + styles.hero}>
@@ -32,13 +31,11 @@ const Home = () => {
 							<img src={logo} alt='Teripure' />
 							<h2>
 								<Text
-									lang={language}
 									ru='Думаете о чистой и здоровой коже, когда смотрите на себя в зеркало? Подумайте о Teripure.'
 									uz="O'zingizga oynaga qaraganingizda toza va sog'lom ter haqida o'ylaysizmi? Teripurni o'ylab ko'ring."></Text>
 							</h2>
 							<p>
 								<Text
-									lang={language}
 									ru='Решения для создания яркой, гладкой здоровой кожи без угрей, с постоянным чувством чистоты'
 									uz="Doimiy tozalik hissi bilan yorqin, silliq, aknesiz sog'lom teri uchun yechimlar."></Text>
 							</p>
@@ -46,11 +43,7 @@ const Home = () => {
 								<Button
 									variant='dark'
 									className={styles.button}>
-									<Text
-										lang={language}
-										ru='Купить'
-										uz='Sotib olish'
-									/>
+									<Text ru='Купить' uz='Sotib olish' />
 								</Button>
 							</Link>
 							{/* <p>
@@ -72,7 +65,6 @@ const Home = () => {
 					<h3 className='text-center'>
 						<b>
 							<Text
-								lang={language}
 								ru='Тройное действие против акне'
 								uz='Aknega qarshi uch tomonlama harakat'
 							/>
@@ -83,17 +75,12 @@ const Home = () => {
 							<div className={styles.action}>
 								<div className={styles.actionName}>
 									<p>
-										<Text
-											lang={language}
-											ru='Очищает'
-											uz='Tozalaydi'
-										/>
+										<Text ru='Очищает' uz='Tozalaydi' />
 									</p>
 									<img src={icon} alt='icon' />
 								</div>
 								<p className={styles.actionDescription}>
 									<Text
-										lang={language}
 										ru='Салфетки TeriPure прочищают поры и
 											растворяют глубоко засевший жир. Они убирают
 											даже ту грязь, с которой не справляются
@@ -107,17 +94,12 @@ const Home = () => {
 							<div className={styles.action}>
 								<div className={styles.actionName}>
 									<p>
-										<Text
-											lang={language}
-											ru='Лечит'
-											uz='Shifo beradi'
-										/>
+										<Text ru='Лечит' uz='Shifo beradi' />
 									</p>
 									<img src={icon} alt='icon' />
 								</div>
 								<p className={styles.actionDescription}>
 									<Text
-										lang={language}
 										ru='TeriPure убирает имеющиеся акне и устраняют
 											угри благодаря салициловой кислоте,
 											проверенному средству против угрей.'
@@ -131,7 +113,6 @@ const Home = () => {
 								<div className={styles.actionName}>
 									<p>
 										<Text
-											lang={language}
 											ru='Предотвращает'
 											uz='Oldini oladi'
 										/>
@@ -140,7 +121,6 @@ const Home = () => {
 								</div>
 								<p className={styles.actionDescription}>
 									<Text
-										lang={language}
 										ru='При регулярном использовании салфетки
 											TeriPure предотвращают высыпания на коже еще
 											до их появления.'

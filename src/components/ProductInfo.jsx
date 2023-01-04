@@ -1,16 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { IoStar, IoStarHalf } from 'react-icons/io5'
 import { useStoreActions } from 'easy-peasy'
-import { ToastContainer, toast, Slide } from 'react-toastify'
+import { toast } from 'react-toastify'
 import styles from '../styles/product.module.sass'
-import IntText from './IntText'
+import Text from './Text'
+import axios from 'axios'
 
 const ProductInfo = () => {
-	let [count, setCount] = useState(1)
-	let increase = () => {
+	const [count, setCount] = useState(1)
+	const increase = () => {
 		setCount(count + 1)
 	}
-	let decrease = () => {
+	const decrease = () => {
 		if (count === 1) return
 		setCount(count - 1)
 	}
@@ -21,22 +22,35 @@ const ProductInfo = () => {
 	const addToBag = () => {
 		addAction(count)
 		toggleBag()
-		notify()
+		toast.success('Продукт был добавлен в корзину!')
 	}
 
-	const notify = () =>
-		toast.success('Продукт был добавлен в корзину!', {
-			position: 'bottom-center',
-			autoClose: 3500,
-			hideProgressBar: false,
-			closeOnClick: true,
-			pauseOnHover: true,
-			draggable: true,
-			progress: undefined,
-		})
+	const [reviewData, setReviewData] = useState([])
+
+	useEffect(() => {
+		axios
+			.get('https://teripure-server.onrender.com/reviews')
+			.then((result) => {
+				setReviewData(
+					result.data.filter((review) => {
+						return review.isPublished
+					})
+				)
+			})
+			.catch((e) => {
+				return
+			})
+	}, [])
+
+	const numberOfReviews = reviewData.length
+	const ratings = reviewData.map((review) => review.rating)
+	const averageRating =
+		Math.round(
+			(ratings.reduce((a, b) => a + b, 0) / numberOfReviews) * 10
+		) / 10
+
 	return (
 		<div className={styles.withInfo}>
-			<ToastContainer transition={Slide} />
 			<h3>
 				<b>TeriPure Maximum</b>
 			</h3>
@@ -48,11 +62,13 @@ const ProductInfo = () => {
 					<IoStar className='react-icons' size={16} />
 					<IoStarHalf className='react-icons' size={16} />
 				</div>
-				<div>4.5 (750)</div>
+				<div>
+					{averageRating} ({numberOfReviews})
+				</div>
 			</div>
 			<div className={styles.description}>
 				<p>
-					<IntText
+					<Text
 						ru='Ватные диски содержащие салициловую кислоту и имеющие
 					кератолический эффект'
 						uz="Salitsil kislotasini o'z ichiga olgan va keratolik ta'sirga ega bo'lgan paxta yostig'chalari"
@@ -61,28 +77,23 @@ const ProductInfo = () => {
 			</div>
 			<div className={styles.size}>
 				<span>
-					50 <IntText ru='шт.' uz='dona' />
+					50 <Text ru='шт.' uz='dona' />
 				</span>
 			</div>
 			<div className={styles.price}>
 				<span>
-					135,000 <IntText ru='сум' uz="so'm" />
+					135,000 <Text ru='сум' uz="so'm" />
 				</span>
 			</div>
 			<div className={styles.form}>
 				<div className={styles.counter}>
-					<button type='' onClick={decrease}>
-						-
-					</button>
+					<button onClick={decrease}>-</button>
 					<p>{count}</p>
 					<button onClick={increase}>+</button>
 				</div>
 				<div className={styles.addToBag}>
 					<button onClick={addToBag}>
-						<IntText
-							ru='Добавить в корзину'
-							uz="Savatga qo'shish"
-						/>
+						<Text ru='Добавить в корзину' uz="Savatga qo'shish" />
 					</button>
 				</div>
 			</div>

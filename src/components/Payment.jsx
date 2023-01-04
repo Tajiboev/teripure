@@ -3,29 +3,42 @@ import axios from 'axios'
 import click_logo from '../images/click.png'
 import payme_logo from '../images/payme.png'
 import styles from '../styles/payment.module.sass'
+import { toast } from 'react-toastify'
+import { useStoreState } from 'easy-peasy'
 
-const Payment = ({ order, ...props }) => {
-	const { _id, amount, customer } = order
+const Payment = ({ order }) => {
+	const { _id } = order
 
 	const [loading, setLoading] = useState(false)
+	const lang = useStoreState((state) => state.displayLanguage)
 
 	const handleClickPayment = async () => {
 		setLoading(true)
+
+		const alert = {
+			pending: lang === 'ru' ? 'Записываем отзыв...' : 'Yuklanmoqda...',
+			success: lang === 'ru' ? 'Спасибо!' : 'Rahmat!',
+			error: lang === 'ru' ? 'Ошибка!' : 'Xatolik!',
+		}
+
 		try {
-			const response = await axios.post(
-				'https://obscure-beach-21124.herokuapp.com/payment/click/createInvoice',
+			await toast.promise(
+				axios.post(
+					'https://teripure-server.onrender.com/payment/click/createInvoice',
+					{
+						order: _id,
+					}
+				),
 				{
-					merchant_trans_id: _id,
-					amount: amount,
-					phone_number: customer.phoneNumber,
+					pending: alert.pending,
+					success: alert.success,
+					error: alert.error,
 				}
 			)
-			alert(`Вам выставлен счёт в системе Click.uz!`)
 		} catch {
+		} finally {
 			setLoading(false)
-			alert('Мы не смогли выставить счёт по указанному номеру телефона')
 		}
-		setLoading(false)
 	}
 
 	return (

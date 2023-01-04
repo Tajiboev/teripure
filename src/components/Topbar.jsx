@@ -8,7 +8,6 @@ import Text from '../components/Text'
 
 const Topbar = () => {
 	const changeLang = useStoreActions((actions) => actions.changeLanguage)
-	const language = useStoreState((state) => state.displayLanguage)
 	const itemsInBag = useStoreState((state) => state.itemsInBag)
 	const toggleBag = useStoreActions((actions) => actions.toggleBag)
 
@@ -17,7 +16,6 @@ const Topbar = () => {
 			<Container className={styles.wrapper}>
 				<div className={styles.promo}>
 					<Text
-						lang={language}
 						ru='Доставка по Ташкенту в течении 2 дней'
 						uz="Toshkent shahri bo'yicha yetkazib berish bepul"
 					/>
@@ -33,7 +31,9 @@ const Topbar = () => {
 						className={'d-flex ' + styles.button}
 						onClick={changeLang}>
 						<IoEarthOutline className='react-icons' size={20} />
-						<span>{language}</span>
+						<span>
+							<Text ru='Русский' uz="O'zbekcha" />
+						</span>
 					</button>
 				</div>
 			</Container>

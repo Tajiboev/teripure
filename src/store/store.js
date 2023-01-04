@@ -1,23 +1,18 @@
 import { createStore, action, computed, persist } from "easy-peasy";
 
 const store = createStore(persist({
-    isAuthenticated: false,
-    authenticate: action((state)=>{
-      state.isAuthenticated = true
-    }),
-    token: '',
-    setToken: action((state, payload)=>{
-      state.token = payload
+    addToBag: action((state, payload)=>{
+      state.itemsInBag += payload
     }),
     price: 135000,
     itemsInBag: 0,
-    totalPrice: computed(state => state.price * state.itemsInBag),
-    displayLanguage: "Русский",
+    totalAmount: computed(state => state.price * state.itemsInBag),
+    displayLanguage: "ru",
     changeLanguage: action((state) => {
-      if(state.displayLanguage === 'Русский') {
-        state.displayLanguage = "O'zbekcha"
+      if(state.displayLanguage === 'ru') {
+        state.displayLanguage = "uz"
       } else {
-        state.displayLanguage = "Русский"
+        state.displayLanguage = "ru"
       }
     }),
     bagOpen: false,
@@ -33,10 +28,6 @@ const store = createStore(persist({
     clearBag: action((state)=>{
       if(state.itemsInBag !== 0) state.itemsInBag = 0
     }),
-    addToBag: action((state, payload) => {
-      console.log("payload: ", payload)
-      state.itemsInBag = state.itemsInBag + payload
-    })
   }, {
     storage: localStorage
   }));

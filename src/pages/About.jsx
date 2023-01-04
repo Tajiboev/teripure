@@ -8,24 +8,17 @@ import { Link } from 'react-router-dom'
 import image2 from '../images/main.jpg'
 import image3 from '../images/image2.png'
 import Text from '../components/Text'
-import { useStoreState } from 'easy-peasy'
 
 const About = () => {
-	const language = useStoreState((state) => state.displayLanguage)
 	return (
 		<>
 			<Container>
 				<div className={styles.hero}>
 					<h2>
-						<Text
-							lang={language}
-							ru='О компании'
-							uz='Kompaniya haqida'
-						/>
+						<Text ru='О компании' uz='Kompaniya haqida' />
 					</h2>
 					<p>
 						<Text
-							lang={language}
 							ru='«ТериПюр» молодая компания в Узбекистане предлагающая
 						знакомые эффективные технологии в области ухода за
 						кожей. Бренд был основан, в целях создания комплексного
@@ -42,15 +35,10 @@ const About = () => {
 					<div className={styles.textWrapper}>
 						<div>
 							<h2>
-								<Text
-									lang={language}
-									ru='Продукт'
-									uz='Mahsulot'
-								/>
+								<Text ru='Продукт' uz='Mahsulot' />
 							</h2>
 							<p>
 								<Text
-									lang={language}
 									ru='Наш бренд создан с целью помочь нашим клиентам
 						почувствовать здоровую и гладкую кожи без угрей.
 						В 2022 году, был выпущен наш первый продукт по
@@ -83,15 +71,10 @@ const About = () => {
 					<div className={styles.textWrapper}>
 						<div>
 							<h2>
-								<Text
-									lang={language}
-									ru='Наша миссия'
-									uz='Bizning vazifamiz'
-								/>
+								<Text ru='Наша миссия' uz='Bizning vazifamiz' />
 							</h2>
 							<p>
 								<Text
-									lang={language}
 									ru='Мы привержены постоянному развитию коллекции
 						продуктов, и в данный момент проводим испытания
 						еще трех продуктов предназначенных для всех
@@ -112,17 +95,12 @@ const About = () => {
 				</section>
 				<p className={styles.contactLink}>
 					<Text
-						lang={language}
 						ru='Если есть продукты по уходу за кожей, которые вы хотели бы
 						видеть в ассортименте ТериПюр, свяжитесь с нами '
 						uz="Agar siz TeriPure assortimentida ko'rishni hohlagan terni parvarishlovchi vositalar mavjud bo'lsa, "
 					/>
 					<Link to='/contact-us'>
-						<Text
-							lang={language}
-							ru='здесь'
-							uz="biz bilan bu yerda bog'laning"
-						/>
+						<Text ru='здесь' uz="biz bilan bu yerda bog'laning" />
 					</Link>
 					.
 				</p>

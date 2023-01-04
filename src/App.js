@@ -2,24 +2,25 @@ import React from 'react'
 
 import store from './store/store'
 import { StoreProvider } from 'easy-peasy'
-
+import { ToastContainer, Slide } from 'react-toastify'
 import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Product from './pages/Product'
-import NotFound from './pages/404'
-import Checkout from './pages/Checkout'
-import Contact from './pages/Contact'
-import About from './pages/About'
 
-//
+// components
 import Backdrop from './components/Backdrop'
 import Topbar from './components/Topbar'
 import Navbar from './components/Navbar'
 import ShoppingBag from './components/ShoppingBag'
 import Footer from './components/Footer'
-import Orders from './pages/Orders'
-import Order from './pages/Order'
-// import Payment from './pages/Payment'
+
+// pages
+const Home = React.lazy(() => import('./pages/Home'))
+const Product = React.lazy(() => import('./pages/Product'))
+const NotFound = React.lazy(() => import('./pages/404'))
+const Checkout = React.lazy(() => import('./pages/Checkout'))
+const Contact = React.lazy(() => import('./pages/Contact'))
+const About = React.lazy(() => import('./pages/About'))
+const Orders = React.lazy(() => import('./pages/Orders'))
+const Order = React.lazy(() => import('./pages/Order'))
 
 const App = () => {
 	return (
@@ -31,6 +32,14 @@ const App = () => {
 				<ShoppingBag />
 			</header>
 			<main>
+				<ToastContainer transition={Slide}
+					position='bottom-center'
+					autoClose={3500}
+					hideProgressBar={false}
+					pauseOnHover
+					theme='light'
+				/>
+				<React.Suspense fallback={<div>Loading...</div>}>
 				<Routes>
 					<Route path='/' exact element={<Home />} />
 					<Route path='/teripure' exact element={<Home />} />
@@ -42,6 +51,7 @@ const App = () => {
 					<Route path='/orders/:orderId' exact element={<Order />} />
 					<Route path='*' element={<NotFound />} />
 				</Routes>
+				</React.Suspense>
 			</main>
 			<Footer />
 		</StoreProvider>

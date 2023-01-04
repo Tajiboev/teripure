@@ -4,19 +4,22 @@ import AddReview from '../components/AddReview'
 import { IoStar } from 'react-icons/io5'
 import Review from './Review'
 import axios from 'axios'
-import IntText from './IntText'
+import Text from './Text'
 
 const Reviews = () => {
 	const [reviewData, setReviewData] = useState([])
 	useEffect(() => {
 		axios
-			.get('https://obscure-beach-21124.herokuapp.com/reviews/')
+			.get('https://teripure-server.onrender.com/reviews')
 			.then((result) => {
 				setReviewData(
 					result.data.filter((review) => {
-						return review.status === 'одобрено'
+						return review.isPublished
 					})
 				)
+			})
+			.catch((e) => {
+				return
 			})
 	}, [])
 
@@ -36,8 +39,6 @@ const Reviews = () => {
 	}
 	const ratingKeys = Object.keys(ratingsByValue)
 
-	console.log(ratingsByValue)
-
 	const [formOpen, setFormOpen] = useState(false)
 	const toggleForm = () => {
 		setFormOpen(!formOpen)
@@ -54,14 +55,13 @@ const Reviews = () => {
 					<IoStar className='react-icons' size={16} />
 					<div>
 						{!averageRating ? '0.0' : averageRating} (
-						{numberOfReviews} <IntText ru='отзывов' uz='ta sharh' />
-						)
+						{numberOfReviews} <Text ru='отзывов' uz='ta sharh' />)
 					</div>
 				</div>
 
 				<div className={styles.writeReview}>
 					<button onClick={toggleForm}>
-						<IntText
+						<Text
 							ru={formOpen ? 'Закрыть форму' : 'Оставить отзыв'}
 							uz={formOpen ? 'Yopish' : 'Sharh qoldirish'}
 						/>

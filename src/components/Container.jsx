@@ -1,8 +1,8 @@
 import React from 'react'
-import ContainerB from 'react-bootstrap/Container'
+import BootstrapContainer from 'react-bootstrap/Container'
 
 const Container = ({ children, ...props }) => {
-	return <ContainerB {...props}>{children}</ContainerB>
+	return <BootstrapContainer {...props}>{children}</BootstrapContainer>
 }
 
 export default Container

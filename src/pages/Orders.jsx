@@ -24,24 +24,21 @@ const Orders = () => {
 				<Form onSubmit={onSubmit} ref={formRef} className={styles.form}>
 					<Form.Group className='mb-3' controlId='formBasicEmail'>
 						<Form.Label>
-							<Text
-								lang={lang}
-								ru='Номер заказа'
-								uz='Buyurtma raqami'></Text>
+							<Text ru='Номер заказа' uz='Buyurtma raqami'></Text>
 						</Form.Label>
 						<Form.Control
 							type='text'
 							placeholder={
-								lang === 'Русский'
+								lang === 'ru'
 									? 'Введите номер заказа'
 									: 'Buyurtma raqamini kiriting'
 							}
+							required
 							ref={inputRef}
 						/>
 					</Form.Group>
 					<Button variant='dark' type='submit'>
 						<Text
-							lang={lang}
 							ru='Получить информацию о заказе'
 							uz="Ma'lumot olish"></Text>
 					</Button>

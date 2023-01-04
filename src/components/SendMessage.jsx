@@ -14,48 +14,30 @@ const SendMessage = () => {
 
 	const [isSending, setIsSending] = useState(false)
 
-	const sendMessage = (e) => {
+	const sendMessage = async (e) => {
 		e.preventDefault()
 		setIsSending(true)
-		let formData = {
+		const formData = {
 			name: name.current.value,
 			email: email.current.value,
 			text: message.current.value,
 		}
-		axios
-			.post(
-				'https://obscure-beach-21124.herokuapp.com/messages',
+		try {
+			axios.post(
+				'https://teripure-server.onrender.com/messages',
 				formData
 			)
-			.then((result) => {
-				console.log(result)
-				alert(
-					lang === 'Русский'
-						? 'Мы получили ваше сообщение. Спасибо!'
-						: 'Xabaringiz qabul qilindi. Rahmat!'
-				)
-				setIsSending(false)
-				form.current.reset()
-			})
-			.catch((e) => {
-				console.log(e.message)
-				alert(
-					lang === 'Русский'
-						? 'Сообщение не было отправлено!'
-						: 'Xabar yuborilmadi!'
-				)
-				setIsSending(false)
-			})
+		} catch (e) {
+		} finally {
+			setIsSending(false)
+		}
 	}
 
 	return (
 		<div className={styles.formWrapper}>
 			<form ref={form} onSubmit={sendMessage}>
 				<h2>
-					<Text
-						lang={lang}
-						ru='Отправить сообщение'
-						uz='Xabar yuborish'></Text>
+					<Text ru='Отправить сообщение' uz='Xabar yuborish'></Text>
 				</h2>
 				<div>
 					<input
@@ -98,16 +80,11 @@ const SendMessage = () => {
 					/>
 					<label htmlFor='agree'>
 						<Text
-							lang={lang}
 							ru='Согласие на обработку персональных данных'
 							uz="Shaxsiy ma'lumotlarni qayta ishlashga rozilik"></Text>
 					</label>
 				</div>
-				<Button
-					isLoading={isSending}
-					loadingText={
-						lang === 'Русский' ? 'Отправляем...' : 'Yuborilmoqda...'
-					}>
+				<Button isLoading={isSending}>
 					<Text lang={lang} ru='Отправить' uz='Yuborish'></Text>
 				</Button>
 			</form>

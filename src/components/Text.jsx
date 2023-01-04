@@ -1,7 +1,9 @@
+import { useStoreState } from 'easy-peasy'
 import React from 'react'
 
-const Text = ({ lang, ru, uz }) => {
-	return <>{lang === 'Русский' ? ru : uz}</>
+const Text = ({ uz, ru }) => {
+	const lang = useStoreState((state) => state.displayLanguage)
+	return <>{lang === 'ru' ? ru : uz}</>
 }
 
 export default Text

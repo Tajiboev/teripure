@@ -1,7 +1,7 @@
 import React from 'react'
 import { faqs } from './faqdata'
 import Accordion from 'react-bootstrap/Accordion'
-import IntText from './IntText'
+import Text from './Text'
 
 const FAQS = () => {
 	const categories = [...new Set(faqs.map((faq) => faq.category.id))]
@@ -19,7 +19,7 @@ const FAQS = () => {
 						<br />
 						<h5>
 							<b>
-								<IntText
+								<Text
 									ru={cat.category.ru}
 									uz={cat.category.uz}
 								/>
@@ -32,13 +32,13 @@ const FAQS = () => {
 										eventKey={`${c}${i}`}
 										style={{ 'margin-bottom': '4px' }}>
 										<Accordion.Header>
-											<IntText
+											<Text
 												ru={faq.heading.ru}
 												uz={faq.heading.uz}
 											/>
 										</Accordion.Header>
 										<Accordion.Body>
-											<IntText
+											<Text
 												ru={faq.content.ru}
 												uz={faq.content.uz}
 											/>

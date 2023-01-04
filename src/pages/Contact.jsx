@@ -7,38 +7,30 @@ import {
 	IoCallOutline,
 	IoTimeOutline,
 } from 'react-icons/io5'
-
 import { YMaps, Map, Placemark } from 'react-yandex-maps'
-
 import styles from '../styles/contact.module.sass'
-
 import SendMessage from '../components/SendMessage'
 import Text from '../components/Text'
-import { useStoreState } from 'easy-peasy'
 
 const Contact = () => {
-	const lang = useStoreState((state) => state.displayLanguage)
 	return (
 		<>
 			<Container>
 				<div className={styles.hero}>
 					<h1>
 						<Text
-							lang={lang}
 							ru='Оставайтесь с нами на связи'
 							uz="Biz bilan aloqada bo'ling"
 						/>
 					</h1>
 					<h2>
 						<Text
-							lang={lang}
 							ru='Мы здесь, чтобы помочь и ответить на любой ваш вопрос.'
 							uz='Biz yordam berish va har qanday savolingizga javob berish uchun shu yerdamiz.'
 						/>
 
 						<br />
 						<Text
-							lang={lang}
 							ru='Мы с нетерпением ждем услышать от вас'
 							uz='Sizdan xabar kutib qolamiz'
 						/>
@@ -49,23 +41,20 @@ const Contact = () => {
 						<IoLocationOutline />
 						<div>
 							<p className={styles.headline}>
-								<Text lang={lang} ru='Адрес' uz='Manzil' />
+								<Text ru='Адрес' uz='Manzil' />
 							</p>
 							<address>
 								<Text
-									lang={lang}
 									ru='Бизнес-центр "Инконель"'
 									uz='"Inkonel" biznes markazi"'
 								/>
 								<br />
 								<Text
-									lang={lang}
 									ru='75, проспект Мустакиллик'
 									uz="75, Mustaqillik shox ko'chasi"
 								/>
 								<br />
 								<Text
-									lang={lang}
 									ru='Ташкент, Узбекистан'
 									uz="Toshkent, O'zbekiston"
 								/>
@@ -78,16 +67,11 @@ const Contact = () => {
 						<IoCallOutline />
 						<div>
 							<p className={styles.headline}>
-								<Text
-									lang={lang}
-									ru='Контакты'
-									uz='Kontaktlar '
-								/>
+								<Text ru='Контакты' uz='Kontaktlar ' />
 							</p>
 							<p>
 								<span>
 									<Text
-										lang={lang}
 										ru='Горячая линия:'
 										uz='Ishonch raqami:'
 									/>
@@ -99,7 +83,6 @@ const Contact = () => {
 							<p>
 								<span>
 									<Text
-										lang={lang}
 										ru='Электронный адрес:'
 										uz='Elektron manzil:'
 									/>
@@ -134,16 +117,11 @@ const Contact = () => {
 						<IoTimeOutline />
 						<div>
 							<p className={styles.headline}>
-								<Text
-									lang={lang}
-									ru='Время работы:'
-									uz='Ish vaqti:'
-								/>
+								<Text ru='Время работы:' uz='Ish vaqti:' />
 							</p>
 							<p>
 								<span>
 									<Text
-										lang={lang}
 										ru='Понедельник-Пятница:'
 										uz='Dushanba-Juma:'
 									/>
@@ -153,7 +131,6 @@ const Contact = () => {
 							<p>
 								<span>
 									<Text
-										lang={lang}
 										ru='Суббота-Воскресенье:'
 										uz='Shanba-Yakshanba:'
 									/>

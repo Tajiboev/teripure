@@ -9,7 +9,7 @@ import ProductInfo from '../components/ProductInfo'
 import FAQS from '../components/DisplayFAQS'
 import Reviews from '../components/Reviews'
 import { Helmet } from 'react-helmet'
-import IntText from '../components/IntText'
+import Text from '../components/Text'
 
 const Product = () => {
 	return (
@@ -48,7 +48,7 @@ const Product = () => {
 						<div className={styles.navigation}>
 							<h5>
 								<b>
-									<IntText
+									<Text
 										ru='Детали продукта TeriPure Maximum'
 										uz='TeriPure Maximum mahsulot tafsilotlari'
 									/>
@@ -56,18 +56,17 @@ const Product = () => {
 							</h5>
 							<ul>
 								<li>
-									-{' '}
-									<IntText ru='Технология' uz='Tehnologiya' />
+									- <Text ru='Технология' uz='Tehnologiya' />
 								</li>
 								<li>
 									-{' '}
-									<IntText
+									<Text
 										ru='Рекомендация по применению'
 										uz="Qo'llash bo'yicha tavsiyalar"
 									/>
 								</li>
 								<li>
-									- <IntText ru='Состав' uz='Tarkibi' />
+									- <Text ru='Состав' uz='Tarkibi' />
 								</li>
 							</ul>
 						</div>
@@ -75,14 +74,14 @@ const Product = () => {
 							<div className={styles.detail}>
 								<h5>
 									<b>
-										<IntText
+										<Text
 											ru='Технология'
 											uz='Tehnologiya'
 										/>
 									</b>
 								</h5>
 								<p>
-									<IntText
+									<Text
 										ru='TeriPure Maximum это ватные диски которые
 									содержат салициловую кислоту и имеют
 									кератолический эффект. Продукт разработан
@@ -98,14 +97,14 @@ const Product = () => {
 								<br />
 								<h5>
 									<b>
-										<IntText
+										<Text
 											ru='Рекомендация по применению'
 											uz="Qo'llash bo'yicha tavsiyalar"
 										/>
 									</b>
 								</h5>
 								<p>
-									<IntText
+									<Text
 										ru='Вымойте кожу перед применением. Вытирайте
 									салфеткой весь пораженный участок от один
 									раз перед сном до трех раз в день. Вымойте
@@ -129,11 +128,11 @@ const Product = () => {
 								<br />
 								<h5>
 									<b>
-										<IntText ru='Состав' uz='Tarkibi' />
+										<Text ru='Состав' uz='Tarkibi' />
 									</b>
 								</h5>
 								<p>
-									<IntText
+									<Text
 										ru='В салфетках TeriPure совсем не содержит
 									спирта и эффективно действуют против угрей,
 									не оставляя ожогов и подходят для любых
@@ -154,7 +153,7 @@ const Product = () => {
 						<div className={styles.navigation}>
 							<h5>
 								<b>
-									<IntText
+									<Text
 										ru='Часто задаваемые вопросы'
 										uz="Ko'p so'raladigan savollar"
 									/>
@@ -162,23 +161,20 @@ const Product = () => {
 							</h5>
 							<ul>
 								<li>
-									- <IntText ru='Контакты' uz='Kontaktlar' />
+									- <Text ru='Контакты' uz='Kontaktlar' />
 								</li>
 								<li>
-									- <IntText ru='Продукт' uz='Mahsulot' />
+									- <Text ru='Продукт' uz='Mahsulot' />
 								</li>
 								<li>
 									-{' '}
-									<IntText
-										ru='Доставка'
-										uz='Yetkazib berish'
-									/>
+									<Text ru='Доставка' uz='Yetkazib berish' />
 								</li>
 								<li>
-									- <IntText ru='Возврат' uz='Qaytarish' />
+									- <Text ru='Возврат' uz='Qaytarish' />
 								</li>
 								<li>
-									- <IntText ru='Заказ' uz='Buyurtma' />
+									- <Text ru='Заказ' uz='Buyurtma' />
 								</li>
 							</ul>
 						</div>
@@ -190,7 +186,7 @@ const Product = () => {
 						<div className={styles.navigation}>
 							<h5>
 								<b>
-									<IntText
+									<Text
 										ru='Отзывы клиентов'
 										uz='Mijozlarning sharhlari'
 									/>

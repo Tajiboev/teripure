@@ -4,7 +4,6 @@ import { HashRouter } from 'react-router-dom'
 import App from './App'
 import './styles/main.sass'
 import 'react-toastify/dist/ReactToastify.css'
-// import 'bootstrap/dist/css/bootstrap.min.css'
 
 import TagManager from 'react-gtm-module'
 

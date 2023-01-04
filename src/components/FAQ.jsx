@@ -9,7 +9,7 @@ import {
 
 import { IoChevronForwardOutline } from 'react-icons/io5'
 import styles from '../styles/faq.module.sass'
-import IntText from './IntText'
+import Text from './Text'
 
 const FAQ = ({ faqData }) => {
 	return (
@@ -27,7 +27,7 @@ const FAQ = ({ faqData }) => {
 						<AccordionItemButton className={styles.heading}>
 							<div>
 								<IoChevronForwardOutline size={12} />
-								<IntText ru={faqData.heading}></IntText>
+								<Text ru={faqData.heading}></Text>
 							</div>
 						</AccordionItemButton>
 					</AccordionItemHeading>
