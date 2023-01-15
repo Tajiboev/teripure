@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
-    gtmId: 'GTM-M9C6RG6'
+    gtmId: 'G-MZD5DH3PTW'
 }
 
 TagManager.initialize(tagManagerArgs)
