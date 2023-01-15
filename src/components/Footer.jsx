@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import Instagram from '../images/instagram_1.png'
+import Instagram_w from '../images/instagram_1.webp'
 import Text from './Text'
 import { useStoreState } from 'easy-peasy'
 import { toast } from 'react-toastify'
@@ -67,15 +68,21 @@ const Footer = () => {
 								</p>
 							</li>
 							<li>
-								<img
-									src={Instagram}
-									alt='instagram'
-									width={20}
+								<picture
 									style={{
 										marginRight: '4px',
 										marginBottom: '1px',
-									}}
-								/>
+									}}>
+									<source
+										srcSet={Instagram_w}
+										type='image/webp'
+									/>
+									<img
+										src={Instagram}
+										alt='instagram'
+										width={20}
+									/>
+								</picture>
 								<a
 									href='https://instagram.com/teripure_uz'
 									target='_blank'

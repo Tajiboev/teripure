@@ -2,14 +2,22 @@ import React from 'react'
 import styles from '../styles/home.module.sass'
 import Container from '../components/Container'
 
+//png
 import image1 from '../images/image1.png'
 import image2 from '../images/image2.png'
 import image3 from '../images/image3.png'
 import image4 from '../images/image4.png'
 import logo from '../images/logo.png'
 
+//
+import image1_w from '../images/image1.webp'
+import image2_w from '../images/image2.webp'
+import image3_w from '../images/image3.webp'
+import image4_w from '../images/image4.webp'
+
 import icon from '../images/arrowIcon.svg'
 import mainImage from '../images/main.jpg'
+import mainImage_w from '../images/main.webp'
 
 import { Link } from 'react-router-dom'
 
@@ -54,7 +62,13 @@ const Home = () => {
 						</Col>
 						<Col md lg={6} className={styles.heroRight}>
 							<div className={styles.heroImage}>
-								<img src={mainImage} alt='home' />
+								<picture>
+									<source
+										srcSet={mainImage_w}
+										type='image/webp'
+									/>
+									<img src={mainImage} alt='Main product' />
+								</picture>
 							</div>
 						</Col>
 					</Row>
@@ -135,41 +149,53 @@ const Home = () => {
 							xs={12}
 							md={3}
 							className={'mb-2 mb-sm-0 ' + styles.imageContainer}>
-							<img
-								className='img-responsive'
-								src={image1}
-								alt='Product 1'
-							/>
+							<picture>
+								<source srcSet={image1_w} type='image/webp' />
+								<img
+									className='img-responsive'
+									src={image1}
+									alt='Product 1'
+								/>
+							</picture>
 						</Col>
 						<Col
 							xs={12}
 							md={3}
 							className={'mb-2 mb-sm-0 ' + styles.imageContainer}>
-							<img
-								className='img-responsive'
-								src={image2}
-								alt='Product 1'
-							/>
+							<picture>
+								<source srcSet={image2_w} type='image/webp' />
+								<img
+									className='img-responsive'
+									src={image2}
+									alt='Product 2'
+								/>
+							</picture>
 						</Col>
 						<Col
 							xs={12}
 							md={3}
 							className={'mb-2 mb-sm-0 ' + styles.imageContainer}>
-							<img
-								className='img-responsive'
-								src={image3}
-								alt='Product 1'
-							/>
+							<picture>
+								<source srcSet={image3_w} type='image/webp' />
+								<img
+									className='img-responsive'
+									src={image3}
+									alt='Product 3'
+								/>
+							</picture>
 						</Col>
 						<Col
 							xs={12}
 							md={3}
 							className={'mb-2 mb-sm-0 ' + styles.imageContainer}>
-							<img
-								className='img-responsive'
-								src={image4}
-								alt='Product 1'
-							/>
+							<picture>
+								<source srcSet={image4_w} type='image/webp' />
+								<img
+									className='img-responsive'
+									src={image4}
+									alt='Product 4'
+								/>
+							</picture>
 						</Col>
 					</Row>
 				</Container>
