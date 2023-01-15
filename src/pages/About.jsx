@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 
 // import image1 from '../images/image1.png'
 import image2 from '../images/main.jpg'
+import image2_w from '../images/main.webp'
 import image3 from '../images/image2.png'
+import image3_w from '../images/image2.webp'
 import Text from '../components/Text'
 
 const About = () => {
@@ -53,20 +55,26 @@ const About = () => {
 						</div>
 					</div>
 					<div className={styles.imageWrapper}>
-						<img
-							src={image2}
-							alt='teripure'
-							className='img-responsive'
-						/>
+						<picture>
+							<source srcSet={image2_w} type='image/webp' />
+							<img
+								src={image2}
+								alt='teripure'
+								className='img-responsive'
+							/>
+						</picture>
 					</div>
 				</section>
 				<section className={styles.content}>
 					<div className={styles.imageWrapper}>
-						<img
-							src={image3}
-							alt='teripure'
-							className='img-responsive'
-						/>
+						<picture>
+							<source srcSet={image3_w} type='image/webp' />
+							<img
+								src={image3}
+								alt='teripure'
+								className='img-responsive'
+							/>
+						</picture>
 					</div>
 					<div className={styles.textWrapper}>
 						<div>
