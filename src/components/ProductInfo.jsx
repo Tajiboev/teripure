@@ -42,12 +42,12 @@ const ProductInfo = () => {
 			})
 	}, [])
 
-	const numberOfReviews = reviewData.length
+	const numberOfReviews = reviewData.length || 8
 	const ratings = reviewData.map((review) => review.rating)
 	const averageRating =
 		Math.round(
 			(ratings.reduce((a, b) => a + b, 0) / numberOfReviews) * 10
-		) / 10
+		) / 10 || 4.7
 
 	return (
 		<div className={styles.withInfo}>
@@ -82,7 +82,7 @@ const ProductInfo = () => {
 			</div>
 			<div className={styles.price}>
 				<span>
-					135,000 <Text ru='сум' uz="so'm" />
+					95,000 <Text ru='сум' uz="so'm" />
 				</span>
 			</div>
 			<div className={styles.form}>

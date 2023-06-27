@@ -36,7 +36,7 @@ const Home = () => {
 							md
 							lg={6}
 							className={'mb-4 mb-sm-0 ' + styles.heroLeft}>
-							<img src={logo} alt='Teripure' />
+							<img src={logo} alt='Teripure' fetchpriority='high'/>
 							<h2>
 								<Text
 									ru='Думаете о чистой и здоровой коже, когда смотрите на себя в зеркало? Подумайте о Teripure.'

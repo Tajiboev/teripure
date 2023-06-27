@@ -6,11 +6,14 @@ import { ToastContainer, Slide } from 'react-toastify'
 import { Routes, Route } from 'react-router-dom'
 
 // components
-import Backdrop from './components/Backdrop'
+
+
 import Topbar from './components/Topbar'
 import Navbar from './components/Navbar'
 import ShoppingBag from './components/ShoppingBag'
 import Footer from './components/Footer'
+
+const Backdrop = React.lazy(() => import('./components/Backdrop'))
 
 // pages
 const Home = React.lazy(() => import('./pages/Home'))
